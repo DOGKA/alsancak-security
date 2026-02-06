@@ -2,16 +2,15 @@ import { motion } from 'framer-motion';
 import { Shield, Zap, Building2, Camera, Users, AlertTriangle, BarChart3, BookOpen } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
-import ImageMockup from '../components/ui/ImageMockup';
 import s from './Services.module.css';
 
 const mainServices = [
-  { id: 'fiziksel', icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı fiziksel güvenlik hizmetleri sunuyoruz.', items: ['Şirket Merkezleri', 'Rezidanslar', 'Büyükelçilikler', 'Fabrikalar'], imgAlt: 'Fiziksel güvenlik hizmeti görseli', imgSrc: '/images/hizmet-fiziksel-guvenlik.png' },
-  { id: 'enerji', icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hattı güvenliği dahil olmak üzere devlet/kamu tesisleri, petrol üretimi ve hidroelektrik santraller için güvenlik.', items: ['Devlet/Kamu Tesisleri', 'Petrol Üretimi', 'Hidroelektrik Santraller', 'Petrol/Gaz Hattı Güvenliği'], imgAlt: 'Enerji tesisi güvenliği görseli', imgSrc: '/images/hizmet-enerji-tesis.png' },
-  { id: 'altyapi', icon: Building2, title: 'Kritik Altyapı ve İnşaat Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde kritik altyapı güvenliği hizmetleri.', items: ['Barajlar', 'Köprüler', 'Karayolları', 'Binalar'], imgAlt: 'Altyapı güvenliği görseli', imgSrc: '/images/hizmet-kritik-altyapi.png' },
-  { id: 'izleme', icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri ile 7/24 uzaktan izleme hizmetleri.', items: ['CCTV Sistemleri', 'Alarm İzleme Merkezi', 'İzinsiz Giriş Tespit Sistemleri'], imgAlt: 'Uzaktan izleme CCTV görseli', imgSrc: '/images/hizmet-uzaktan-izleme.png' },
-  { id: 'insanli', icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri ile kişisel güvenlik çözümleri.', items: ['Yakın Koruma', 'Seyahat Yönetimi'], imgAlt: 'İnsanlı güvenlik görseli', imgSrc: '/images/hizmet-insanli-guvenlik.png' },
-  { id: 'uretim', icon: Building2, title: 'Üretim ve Endüstri Güvenliği', desc: 'Ticari tesisler, ulaşım ve iletişim altyapıları için üretim ve endüstri güvenliği.', items: ['Ticari Tesisler', 'Ulaşım', 'İletişim'], imgAlt: 'Endüstri güvenliği görseli', imgSrc: '/images/hizmet-danismanlik.png' },
+  { id: 'fiziksel', icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı fiziksel güvenlik hizmetleri sunuyoruz.', items: ['Şirket Merkezleri', 'Rezidanslar', 'Büyükelçilikler', 'Fabrikalar'], imgSrc: '/images/hizmet-fiziksel-guvenlik.png' },
+  { id: 'enerji', icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hattı güvenliği dahil olmak üzere devlet/kamu tesisleri, petrol üretimi ve hidroelektrik santraller için güvenlik.', items: ['Devlet/Kamu Tesisleri', 'Petrol Üretimi', 'Hidroelektrik Santraller', 'Petrol/Gaz Hattı Güvenliği'], imgSrc: '/images/hizmet-enerji-tesis.png' },
+  { id: 'altyapi', icon: Building2, title: 'Kritik Altyapı ve İnşaat Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde kritik altyapı güvenliği hizmetleri.', items: ['Barajlar', 'Köprüler', 'Karayolları', 'Binalar'], imgSrc: '/images/hizmet-kritik-altyapi.png' },
+  { id: 'izleme', icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri ile 7/24 uzaktan izleme hizmetleri.', items: ['CCTV Sistemleri', 'Alarm İzleme Merkezi', 'İzinsiz Giriş Tespit Sistemleri'], imgSrc: '/images/hizmet-uzaktan-izleme.png' },
+  { id: 'insanli', icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri ile kişisel güvenlik çözümleri.', items: ['Yakın Koruma', 'Seyahat Yönetimi'], imgSrc: '/images/hizmet-insanli-guvenlik.png' },
+  { id: 'uretim', icon: Building2, title: 'Üretim ve Endüstri Güvenliği', desc: 'Ticari tesisler, ulaşım ve iletişim altyapıları için üretim ve endüstri güvenliği.', items: ['Ticari Tesisler', 'Ulaşım', 'İletişim'], imgSrc: '/images/hizmet-danismanlik.png' },
 ];
 
 const consultingServices = [
@@ -32,16 +31,16 @@ export default function Services() {
 
       <section className={`${s.section} section-alt section-divider`}>
         <div className={s.container}>
-          <div className={s.servicesList}>
+          <div className={s.servicesGrid}>
             {mainServices.map((service, i) => (
-              <motion.div key={service.id} id={service.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-                className={s.serviceItem}>
-                <div className={i % 2 === 1 ? s.serviceImageColReversed : s.serviceImageCol}>
-                  <ImageMockup width={320} height={208} alt={service.imgAlt} src={service.imgSrc} className={s.serviceImage} />
+              <motion.div key={service.id} id={service.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }}
+                className={s.serviceCard}>
+                <div className={s.serviceImageWrap}>
+                  <img src={service.imgSrc} alt={service.title} className={s.serviceImage} />
                 </div>
-                <div className={`${s.serviceTextCol} ${i % 2 === 1 ? s.serviceTextColReversed : ''}`}>
+                <div className={s.serviceContent}>
                   <div className={s.serviceIconBox}>
-                    <service.icon size={22} />
+                    <service.icon size={18} />
                   </div>
                   <h3 className={s.serviceTitle}>{service.title}</h3>
                   <p className={s.serviceDesc}>{service.desc}</p>
