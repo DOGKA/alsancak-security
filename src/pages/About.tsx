@@ -5,17 +5,19 @@ import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
 import s from './About.module.css';
 
-const orgChart = [
-  { title: 'Danışma Kurulu', level: 0 },
-  { title: 'Genel Koordinatör', level: 1 },
-  { title: 'Güvenlik Direktörü', level: 2 },
-  { title: 'Operasyon Müdürü', level: 2 },
-  { title: 'Risk Analiz ve Eğitim Departmanı', level: 3 },
-  { title: 'Teknik Koordinatörlük', level: 3 },
-  { title: 'İdari Koordinatörlük', level: 3 },
-  { title: 'Finans ve İK Departmanı', level: 3 },
-  { title: 'Alarm Merkezi', level: 3 },
-  { title: 'İSG Uzmanları', level: 3 },
+const orgTop = { title: 'Danışma Kurulu', subtitle: 'Stratejik Yönetim' };
+const orgMid = { title: 'Genel Koordinatör', subtitle: 'Operasyonel Liderlik' };
+const orgDirectors = [
+  { title: 'Güvenlik Direktörü', subtitle: 'Saha Operasyonları' },
+  { title: 'Operasyon Müdürü', subtitle: 'Proje Yönetimi' },
+];
+const orgDepartments = [
+  'Risk Analiz ve Eğitim Departmanı',
+  'Teknik Koordinatörlük',
+  'İdari Koordinatörlük',
+  'Finans ve İK Departmanı',
+  'Alarm Merkezi',
+  'İSG Uzmanları',
 ];
 
 const operationalAreas = [
@@ -32,12 +34,6 @@ const coreValues = [
   { icon: Scale, title: 'Uyumluluk', desc: 'Uluslararası standartlara tam uygunluk.' },
 ];
 
-const dotClass = (level: number) => {
-  if (level === 0) return `${s.orgDot} ${s.orgDotL0}`;
-  if (level === 1) return `${s.orgDot} ${s.orgDotL1}`;
-  if (level === 2) return `${s.orgDot} ${s.orgDotL2}`;
-  return `${s.orgDot} ${s.orgDotL3}`;
-};
 
 export default function About() {
   return (
@@ -80,15 +76,44 @@ export default function About() {
       <section id="organizasyon" className={`${s.section} section-alt section-divider`}>
         <div className={s.container}>
           <SectionTitle subtitle="Organizasyon" title="Güvenlik Organizasyonu" description="Alsancak Grup'un güvenlik organizasyon yapısı." />
-          <div className={`glass ${s.orgCard}`}>
-            <div className={s.orgList}>
-              {orgChart.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                  className={s.orgItem} style={{ paddingLeft: `${item.level * 32}px` }}>
-                  <div className={dotClass(item.level)} />
-                  <div className={`glass ${s.orgLabel}`}>
-                    <span className={`${s.orgLabelText} ${item.level <= 1 ? s.orgLabelHighlight : s.orgLabelNormal}`}>{item.title}</span>
-                  </div>
+          <div className={s.orgWrapper}>
+            {/* Top — Danışma Kurulu */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              className={s.orgTopCard}>
+              <h4 className={s.orgTopTitle}>{orgTop.title}</h4>
+              <span className={s.orgTopSub}>{orgTop.subtitle}</span>
+            </motion.div>
+
+            <div className={s.orgLine} />
+
+            {/* Mid — Genel Koordinatör */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+              className={s.orgMidCard}>
+              <h4 className={s.orgMidTitle}>{orgMid.title}</h4>
+              <span className={s.orgMidSub}>{orgMid.subtitle}</span>
+            </motion.div>
+
+            <div className={s.orgLine} />
+
+            {/* Directors */}
+            <div className={s.orgDirectorsRow}>
+              {orgDirectors.map((dir, i) => (
+                <motion.div key={dir.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+                  className={s.orgDirCard}>
+                  <h4 className={s.orgDirTitle}>{dir.title}</h4>
+                  <span className={s.orgDirSub}>{dir.subtitle}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className={s.orgLine} />
+
+            {/* Departments */}
+            <div className={s.orgDeptGrid}>
+              {orgDepartments.map((dept, i) => (
+                <motion.div key={dept} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
+                  className={s.orgDeptCard}>
+                  <span className={s.orgDeptText}>{dept}</span>
                 </motion.div>
               ))}
             </div>

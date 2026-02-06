@@ -30,83 +30,100 @@
   .reportGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.reportItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-}
-
-.reportIconBox {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 0.75rem;
-  background: var(--color-bg);
+.reportCard {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.reportCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+.reportLogo {
+  height: 6.5rem;
+  width: 6.5rem;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.reportIconBox svg {
-  color: var(--color-body);
-}
-
-.reportName {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-heading);
-  margin-bottom: 0.25rem;
+.reportText {
+  flex: 1;
+  min-width: 0;
 }
 
 .reportProject {
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  display: block;
+  color: var(--color-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .reportDesc {
   color: var(--color-body);
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1.7;
 }
 
 /* ===== Risk Framework ===== */
-.frameworkCard {
-  border-radius: 1.25rem;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .frameworkCard { padding: 3rem; }
-}
-
-.frameworkList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.frameworkItem {
-  display: flex;
-  align-items: flex-start;
+.frameworkGrid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-.frameworkIcon {
-  color: var(--color-accent);
-  margin-top: 0.25rem;
-  flex-shrink: 0;
+@media (min-width: 768px) {
+  .frameworkGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .frameworkGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.frameworkCard {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.frameworkCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+.frameworkNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-heading), var(--color-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  line-height: 1;
 }
 
 .frameworkTitle {
   color: var(--color-heading);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 0.9375rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .frameworkDesc {
@@ -116,27 +133,54 @@
 }
 
 /* ===== Operational Points ===== */
-.opsCard {
-  border-radius: 1.25rem;
-  padding: 2rem;
+.opsDivider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 4rem 0;
+}
+
+.opsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .opsCard { padding: 3rem; }
+  .opsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .opsGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.opsCard {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.opsIconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-accent-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--color-accent);
 }
 
 .opsTitle {
-  font-size: 1.25rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--color-heading);
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
 }
 
-.opsList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.opsDesc {
+  color: var(--color-body);
+  font-size: 0.8125rem;
+  line-height: 1.7;
 }
 
 /* ===== Incident Process ===== */

@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion';
-import { Shield, Zap, Building2, Camera, Users, AlertTriangle, BarChart3, BookOpen } from 'lucide-react';
+import { Shield, Zap, Building2, Camera, Users, AlertTriangle, BarChart3, BookOpen, Fuel, Briefcase } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import s from './Services.module.css';
 
 const mainServices = [
-  { id: 'fiziksel', icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı fiziksel güvenlik hizmetleri sunuyoruz.', items: ['Şirket Merkezleri', 'Rezidanslar', 'Büyükelçilikler', 'Fabrikalar'], imgSrc: '/images/hizmet-fiziksel-guvenlik.png' },
-  { id: 'enerji', icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hattı güvenliği dahil olmak üzere devlet/kamu tesisleri, petrol üretimi ve hidroelektrik santraller için güvenlik.', items: ['Devlet/Kamu Tesisleri', 'Petrol Üretimi', 'Hidroelektrik Santraller', 'Petrol/Gaz Hattı Güvenliği'], imgSrc: '/images/hizmet-enerji-tesis.png' },
-  { id: 'altyapi', icon: Building2, title: 'Kritik Altyapı ve İnşaat Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde kritik altyapı güvenliği hizmetleri.', items: ['Barajlar', 'Köprüler', 'Karayolları', 'Binalar'], imgSrc: '/images/hizmet-kritik-altyapi.png' },
-  { id: 'izleme', icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri ile 7/24 uzaktan izleme hizmetleri.', items: ['CCTV Sistemleri', 'Alarm İzleme Merkezi', 'İzinsiz Giriş Tespit Sistemleri'], imgSrc: '/images/hizmet-uzaktan-izleme.png' },
-  { id: 'insanli', icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri ile kişisel güvenlik çözümleri.', items: ['Yakın Koruma', 'Seyahat Yönetimi'], imgSrc: '/images/hizmet-insanli-guvenlik.png' },
-  { id: 'uretim', icon: Building2, title: 'Üretim ve Endüstri Güvenliği', desc: 'Ticari tesisler, ulaşım ve iletişim altyapıları için üretim ve endüstri güvenliği.', items: ['Ticari Tesisler', 'Ulaşım', 'İletişim'], imgSrc: '/images/hizmet-danismanlik.png' },
+  { id: 'fiziksel', icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı fiziksel güvenlik hizmetleri sunuyoruz.', items: ['Şirket Merkezleri', 'Rezidanslar', 'Büyükelçilikler', 'Fabrikalar'], imgSrc: '/images/yeni-fiziksel.png' },
+  { id: 'enerji', icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hattı güvenliği dahil olmak üzere devlet/kamu tesisleri, petrol üretimi ve hidroelektrik santraller için güvenlik.', items: ['Devlet/Kamu Tesisleri', 'Petrol Üretimi', 'Hidroelektrik Santraller', 'Petrol/Gaz Hattı Güvenliği'], imgSrc: '/images/yeni-enerji-tesis.png' },
+  { id: 'petrol', icon: Fuel, title: 'Petrol/Gaz Hattı Güvenliği', desc: 'Petrol ve doğalgaz hatlarının fiziksel güvenliği, izlenmesi ve korunması hizmetleri.', items: ['Boru Hattı Koruma', 'Saha Güvenliği', 'Acil Müdahale', '7/24 İzleme'], imgSrc: '/images/yeni-petrol-gaz.png' },
+  { id: 'altyapi', icon: Building2, title: 'Kritik Altyapı ve İnşaat Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde kritik altyapı güvenliği hizmetleri.', items: ['Barajlar', 'Köprüler', 'Karayolları', 'Binalar'], imgSrc: '/images/yeni-kritik-altyapi.png' },
+  { id: 'izleme', icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri ile 7/24 uzaktan izleme hizmetleri.', items: ['CCTV Sistemleri', 'Alarm İzleme Merkezi', 'İzinsiz Giriş Tespit Sistemleri'], imgSrc: '/images/yeni-uzaktan-izleme.png' },
+  { id: 'insanli', icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri ile kişisel güvenlik çözümleri.', items: ['Yakın Koruma', 'Seyahat Yönetimi'], imgSrc: '/images/yeni-insanli.png' },
+  { id: 'uretim', icon: Building2, title: 'Üretim ve Endüstri Güvenliği', desc: 'Ticari tesisler, ulaşım ve iletişim altyapıları için üretim ve endüstri güvenliği.', items: ['Ticari Tesisler', 'Ulaşım', 'İletişim'], imgSrc: '/images/yeni-uretim-endustri.png' },
+  { id: 'danismanlik-hizmet', icon: Briefcase, title: 'Güvenlik Danışmanlığı', desc: 'Risk değerlendirme, güvenlik mimarisi tasarımı ve kapsamlı güvenlik danışmanlığı hizmetleri.', items: ['Risk Değerlendirme', 'Güvenlik Mimarisi', 'Tehdit Analizi', 'Uyum Danışmanlığı'], imgSrc: '/images/yeni-danismanlik.png' },
+  { id: 'egitim', icon: BookOpen, title: 'Özel Eğitim Programları', desc: 'Düşmanca ortam eğitiminden yakın koruma eğitimine kadar kapsamlı güvenlik eğitim programları.', items: ['HEAT Eğitimi', 'Defansif Sürüş', 'Yakın Koruma Eğitimi', 'Maden Temizleme'], imgSrc: '/images/yeni-ozel-egitim.png' },
 ];
 
 const consultingServices = [

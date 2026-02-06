@@ -6,10 +6,10 @@ import ImageMockup from '../components/ui/ImageMockup';
 import s from './Reports.module.css';
 
 const reportClients = [
-  { name: 'TURKSTREAM B.V.', project: 'TÜRKAKIM Projesi', desc: 'Güvenlik ve Risk Değerlendirme kapsamında Güvenlik Mimarisi tasarımı.' },
-  { name: 'Norveç Büyükelçiliği & STATKRAFT', project: 'Çetin Barajı', desc: 'Güvenlik ve risk değerlendirme raporları.' },
-  { name: 'YAPI MERKEZİ', project: 'Etiyopya Hızlı Tren Projesi', desc: 'Uluslararası proje güvenlik raporlaması.' },
-  { name: 'ABB', project: 'TANAP Projesi', desc: 'Enerji altyapısı güvenlik değerlendirmesi.' },
+  { name: 'TURKSTREAM B.V.', project: 'TÜRKAKIM Projesi', desc: 'Güvenlik ve Risk Değerlendirme kapsamında Güvenlik Mimarisi tasarımı.', logo: '/images/logo-turkstream.png' },
+  { name: 'Norveç Büyükelçiliği & STATKRAFT', project: 'Çetin Barajı', desc: 'Güvenlik ve risk değerlendirme raporları.', logo: '/images/logo-norvec-statkraft.png' },
+  { name: 'YAPI MERKEZİ', project: 'Etiyopya Hızlı Tren Projesi', desc: 'Uluslararası proje güvenlik raporlaması.', logo: '/images/logo-yapi-merkezi.png' },
+  { name: 'ABB', project: 'TANAP Projesi', desc: 'Enerji altyapısı güvenlik değerlendirmesi.', logo: '/images/logo-abb.png' },
 ];
 
 const riskFramework = [
@@ -55,18 +55,14 @@ export default function Reports() {
           <SectionTitle subtitle="Raporlar" title="Güvenlik Raporları" description="Günlük, haftalık ve aylık risk değerlendirme raporları kapsamında Güvenlik Mimarisi tasarlıyoruz." />
           <div className={s.reportGrid}>
             {reportClients.map((client, i) => (
-              <GlassCard key={client.name} delay={i * 0.08}>
-                <div className={s.reportItem}>
-                  <div className={s.reportIconBox}>
-                    <FileText size={20} />
-                  </div>
-                  <div>
-                    <h4 className={s.reportName}>{client.name}</h4>
-                    <span className={s.reportProject}>{client.project}</span>
-                    <p className={s.reportDesc}>{client.desc}</p>
-                  </div>
+              <motion.div key={client.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={s.reportCard}>
+                <img src={client.logo} alt={client.name} className={s.reportLogo} />
+                <div className={s.reportText}>
+                  <span className={s.reportProject}>{client.project}</span>
+                  <p className={s.reportDesc}>{client.desc}</p>
                 </div>
-              </GlassCard>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -75,32 +71,31 @@ export default function Reports() {
       <section id="risk" className={`${s.section} section-divider`}>
         <div className={s.container}>
           <SectionTitle subtitle="Risk Yönetimi" title="Risk Yönetimi ve Uyum Çerçevesi" description="Alsancak Güvenlik, uluslararası standartlara ve Türk mevzuatına uygun olarak faaliyet gösterir." />
-          <div className={`glass ${s.frameworkCard}`}>
-            <div className={s.frameworkList}>
-              {riskFramework.map((item) => (
-                <div key={item.title} className={s.frameworkItem}>
-                  <CheckCircle size={16} className={s.frameworkIcon} />
-                  <div>
-                    <h5 className={s.frameworkTitle}>{item.title}</h5>
-                    <p className={s.frameworkDesc}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className={s.frameworkGrid}>
+            {riskFramework.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
+                className={s.frameworkCard}>
+                <div className={s.frameworkNumber}>{String(i + 1).padStart(2, '0')}</div>
+                <h5 className={s.frameworkTitle}>{item.title}</h5>
+                <p className={s.frameworkDesc}>{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
-          <div className={`glass ${s.opsCard}`}>
-            <h3 className={s.opsTitle}>Önemli Operasyonel Noktalar</h3>
-            <div className={s.opsList}>
-              {operationalPoints.map((item) => (
-                <div key={item.title} className={s.frameworkItem}>
-                  <CheckCircle size={16} className={s.frameworkIcon} />
-                  <div>
-                    <h5 className={s.frameworkTitle}>{item.title}</h5>
-                    <p className={s.frameworkDesc}>{item.desc}</p>
-                  </div>
+
+          <div className={s.opsDivider} />
+
+          <SectionTitle subtitle="Operasyonel" title="Önemli Operasyonel Noktalar" />
+          <div className={s.opsGrid}>
+            {operationalPoints.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
+                className={s.opsCard}>
+                <div className={s.opsIconWrap}>
+                  <CheckCircle size={20} />
                 </div>
-              ))}
-            </div>
+                <h5 className={s.opsTitle}>{item.title}</h5>
+                <p className={s.opsDesc}>{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

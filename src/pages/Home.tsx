@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Shield, Zap, Building2, Camera, Users, FileSearch, ArrowRight, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Shield, Zap, Building2, Camera, Users, FileSearch, ArrowRight, ChevronRight, Cpu, Radar, Lock } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionTitle from '../components/ui/SectionTitle';
@@ -8,13 +9,20 @@ import ImageMockup from '../components/ui/ImageMockup';
 import StatCounter from '../components/ui/StatCounter';
 import s from './Home.module.css';
 
+const reports = [
+  { title: 'Güvenlik Raporları', desc: 'Günlük, haftalık ve aylık güvenlik değerlendirme raporları.', imgSrc: '/images/yeni-guvenlik-raporlari.png', link: '/raporlama#raporlar' },
+  { title: 'Risk Yönetimi', desc: 'Kapsamlı risk analizi ve tehdit değerlendirme çerçevesi.', imgSrc: '/images/yeni-risk-yonetimi.png', link: '/raporlama#risk' },
+  { title: 'Vaka Yönetim Süreci', desc: 'Hızlı müdahale ekibi ve alarm izleme merkezi süreçleri.', imgSrc: '/images/yeni-vaka-yonetimi.png', link: '/raporlama#vaka' },
+  { title: 'Sürdürülebilirlik', desc: 'Çevre bilinci ve sürdürülebilir güvenlik uygulamaları.', imgSrc: '/images/yeni-surdurulebilirlik.png', link: '/raporlama#surdurulebilirlik' },
+];
+
 const services = [
-  { icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı güvenlik.' },
-  { icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hatları, hidroelektrik santraller ve kamu tesisleri güvenliği.' },
-  { icon: Building2, title: 'Kritik Altyapı Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde güvenlik hizmetleri.' },
-  { icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri.' },
-  { icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri.' },
-  { icon: FileSearch, title: 'Danışmanlık', desc: 'Risk değerlendirme, HEAT eğitimi ve güvenlik açığı analizleri.' },
+  { icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı güvenlik.', imgSrc: '/images/yeni-fiziksel.png', link: '/hizmetlerimiz#fiziksel' },
+  { icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hatları, hidroelektrik santraller ve kamu tesisleri güvenliği.', imgSrc: '/images/yeni-enerji-tesis.png', link: '/hizmetlerimiz#enerji' },
+  { icon: Building2, title: 'Kritik Altyapı Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde güvenlik hizmetleri.', imgSrc: '/images/yeni-kritik-altyapi.png', link: '/hizmetlerimiz#altyapi' },
+  { icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri.', imgSrc: '/images/yeni-uzaktan-izleme.png', link: '/hizmetlerimiz#izleme' },
+  { icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri.', imgSrc: '/images/yeni-insanli.png', link: '/hizmetlerimiz#insanli' },
+  { icon: FileSearch, title: 'Danışmanlık', desc: 'Risk değerlendirme, HEAT eğitimi ve güvenlik açığı analizleri.', imgSrc: '/images/yeni-danismanlik.png', link: '/hizmetlerimiz#danismanlik' },
 ];
 
 const featuredProjects = [
@@ -100,17 +108,20 @@ export default function Home() {
           <SectionTitle subtitle="Hizmetlerimiz" title="Kapsamlı Güvenlik Çözümleri" description="Fiziksel güvenlik ve uzaktan izleme teknolojisinin bir karışımı ile özel, entegre güvenlik çözümleri sunuyoruz." />
           <div className={s.servicesGrid}>
             {services.map((service, i) => (
-              <GlassCard key={service.title} delay={i * 0.08}>
-                <div className={s.serviceIconBox}>
-                  <service.icon size={20} />
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }}
+                className={s.serviceCard}>
+                <div className={s.serviceImageWrap}>
+                  <img src={service.imgSrc} alt={service.title} className={s.serviceImage} />
                 </div>
-                <h3 className={s.serviceTitle}>{service.title}</h3>
-                <p className={s.serviceDesc}>{service.desc}</p>
-                <div className={s.serviceLink}>
-                  <span>Detaylı Bilgi</span>
-                  <ChevronRight size={12} />
+                <div className={s.serviceCardContent}>
+                  <h3 className={s.serviceTitle}>{service.title}</h3>
+                  <p className={s.serviceDesc}>{service.desc}</p>
+                  <Link to={service.link} className={s.serviceLink}>
+                    <span>Detaylı Bilgi</span>
+                    <ChevronRight size={12} />
+                  </Link>
                 </div>
-              </GlassCard>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -132,6 +143,54 @@ export default function Home() {
           </div>
           <div className={s.projectsCta}>
             <GradientButton to="/projelerimiz" variant="outline">Tüm Projeleri Görüntüle <ArrowRight size={16} /></GradientButton>
+          </div>
+        </div>
+      </section>
+
+      {/* REPORTS */}
+      <section className={`${s.section} section-alt section-divider`}>
+        <div className={s.container}>
+          <SectionTitle subtitle="Raporlama" title="Raporlama ve Risk Yönetimi" description="Güvenlik mimarisi tasarımından risk değerlendirmesine kapsamlı raporlama hizmetleri." />
+          <div className={s.reportsGrid}>
+            {reports.map((report, i) => (
+              <motion.div key={report.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }}
+                className={s.serviceCard}>
+                <div className={s.serviceImageWrap}>
+                  <img src={report.imgSrc} alt={report.title} className={s.serviceImage} />
+                </div>
+                <div className={s.serviceCardContent}>
+                  <h3 className={s.serviceTitle}>{report.title}</h3>
+                  <p className={s.serviceDesc}>{report.desc}</p>
+                  <Link to={report.link} className={s.serviceLink}>
+                    <span>Detaylı Bilgi</span>
+                    <ChevronRight size={12} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INNOVATION */}
+      <section className={`${s.section} section-divider`}>
+        <div className={s.container}>
+          <SectionTitle subtitle="Yenilikçi Projeler" title="Geleceğin Güvenlik Teknolojileri" />
+          <div className={s.innovGrid}>
+            {[
+              { icon: Cpu, title: 'Entegre Akıllı Güvenlik Çözümleri', desc: 'Alsancak Güvenlik, entegre akıllı güvenlik çözümleri geliştirmek için en son teknolojilere yatırım yapıyor. Bu, gerçek zamanlı tehdit algılama ve müdahale yeteneklerini geliştirmek için yapay zeka, IoT cihazları ve gelişmiş analitiğin dahil edilmesini içerir.' },
+              { icon: Radar, title: 'Drone ile Gözetleme ve İzleme', desc: 'Gözetim kabiliyetlerimizi artırmayı hedefleyen Alsancak, geniş alanların daha iyi izlenmesi için insansız hava araçlarının kullanımını araştırıyor. Bu girişim, potansiyel güvenlik tehditlerine karşı hızlı ve çok yönlü bir yanıt sağlayacaktır.' },
+              { icon: Lock, title: 'Veri Güvenliği İçin Blok Zinciri', desc: 'Veri güvenliğinin öneminin farkında olan Alsancak, hassas bilgileri güvence altına almak için blok zinciri teknolojisinin uygulanmasını araştırıyor. Bu girişim, giderek dijitalleşen bir ortamda verilerin bütünlüğünü ve gizliliğini sağlamaktadır.' },
+            ].map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={s.innovCard}>
+                <div className={s.innovIconWrap}>
+                  <item.icon size={24} />
+                </div>
+                <h3 className={s.innovTitle}>{item.title}</h3>
+                <p className={s.innovDesc}>{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

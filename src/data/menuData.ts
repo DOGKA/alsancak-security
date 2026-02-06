@@ -29,7 +29,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Şirket genel bakış görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hakkimizda-genel-bakis.png',
+        imageSrc: '/images/sirket-genel-bakis.png',
         link: '/hakkimizda#genel-bakis',
       },
       {
@@ -38,7 +38,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Organizasyon şeması görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hakkimizda-organizasyon.png',
+        imageSrc: '/images/organizasyon-yapisi.png',
         link: '/hakkimizda#organizasyon',
       },
       {
@@ -47,7 +47,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Dünya haritası operasyonel deneyim görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/dunya-haritasi.png',
+        imageSrc: '/images/operasyonel-deneyim.png',
         link: '/hakkimizda#deneyim',
       },
       {
@@ -56,7 +56,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Liderlik kadrosu görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hakkimizda-liderlik.png',
+        imageSrc: '/images/liderlik-kadrosu.png',
         link: '/hakkimizda#liderlik',
       },
     ],
@@ -71,7 +71,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Fiziksel güvenlik hizmeti görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-fiziksel-guvenlik.png',
+        imageSrc: '/images/yeni-fiziksel.png',
         link: '/hizmetlerimiz#fiziksel',
       },
       {
@@ -80,7 +80,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Enerji tesisi güvenlik görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-enerji-tesis.png',
+        imageSrc: '/images/yeni-enerji-tesis.png',
         link: '/hizmetlerimiz#enerji',
       },
       {
@@ -89,7 +89,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Altyapı güvenlik görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-kritik-altyapi.png',
+        imageSrc: '/images/yeni-kritik-altyapi.png',
         link: '/hizmetlerimiz#altyapi',
       },
       {
@@ -98,7 +98,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Uzaktan izleme sistemi görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-uzaktan-izleme.png',
+        imageSrc: '/images/yeni-uzaktan-izleme.png',
         link: '/hizmetlerimiz#izleme',
       },
       {
@@ -107,7 +107,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'İnsanlı güvenlik görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-insanli-guvenlik.png',
+        imageSrc: '/images/yeni-insanli.png',
         link: '/hizmetlerimiz#insanli',
       },
       {
@@ -116,7 +116,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Güvenlik danışmanlığı görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/hizmet-danismanlik.png',
+        imageSrc: '/images/yeni-danismanlik.png',
         link: '/hizmetlerimiz#danismanlik',
       },
     ],
@@ -155,7 +155,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Güvenlik raporları görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/raporlama-guvenlik-raporlari.png',
+        imageSrc: '/images/yeni-guvenlik-raporlari.png',
         link: '/raporlama#raporlar',
       },
       {
@@ -164,7 +164,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Risk yönetimi görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/raporlama-risk-yonetimi.png',
+        imageSrc: '/images/yeni-risk-yonetimi.png',
         link: '/raporlama#risk',
       },
       {
@@ -173,7 +173,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Vaka yönetim süreci görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/raporlama-vaka-yonetimi.png',
+        imageSrc: '/images/yeni-vaka-yonetimi.png',
         link: '/raporlama#vaka',
       },
       {
@@ -182,7 +182,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'Sürdürülebilirlik görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/raporlama-surdurulebilirlik.png',
+        imageSrc: '/images/yeni-surdurulebilirlik.png',
         link: '/raporlama#surdurulebilirlik',
       },
     ],
@@ -197,7 +197,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'ISO sertifikaları görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/sertifika-iso.png',
+        imageSrc: '/images/yeni-iso.png',
         link: '/sertifikalar#iso',
       },
       {
@@ -206,7 +206,7 @@ export const menuData: MenuItem[] = [
         imageAlt: 'ISPS Code deneyimi görseli',
         imageWidth: 80,
         imageHeight: 52,
-        imageSrc: '/images/sertifika-isps.png',
+        imageSrc: '/images/yeni-isps.png',
         link: '/sertifikalar#isps',
       },
     ],
