@@ -51,7 +51,7 @@ export default function Home() {
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className={s.heroTitle}>
             <span>ALSANCAK</span><br />
-            <span className={s.heroTitleAccent}>GRUP GÜVENLİK</span>
+            <span className={s.heroTitleAccent}>GÜVENLİK</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className={s.heroDesc}>
             Enerji hatları, tesisler ve maden sahalarında 7/24 operasyon.
