@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FileText, AlertTriangle, ArrowRight, Shield, Bell, Users, Leaf, CheckCircle, Clock } from 'lucide-react';
-import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
 import s from './Reports.module.css';
