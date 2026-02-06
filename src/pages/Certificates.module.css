@@ -1,0 +1,153 @@
+.pageHeader {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--px-lg);
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* ===== ISO Grid ===== */
+.isoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .isoGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .isoGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.isoHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.isoIconBox {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.isoIconBox svg {
+  color: var(--color-body);
+}
+
+.isoTextWrap {
+  min-width: 0;
+}
+
+.isoCode {
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.isoTitle {
+  color: var(--color-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.isoTitleEn {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.isoImage {
+  width: 100%;
+}
+
+/* ===== ISPS ===== */
+.ispsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .ispsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.ispsImage {
+  width: 100%;
+}
+
+.ispsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ispsItem {
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.ispsItemInner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ispsIconBox {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ispsIconBox svg {
+  color: var(--color-body);
+}
+
+.ispsName {
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.ispsFacility {
+  color: var(--color-body);
+  font-size: 0.75rem;
+  margin-top: 0.375rem;
+}
+
+.ispsPeriod {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}

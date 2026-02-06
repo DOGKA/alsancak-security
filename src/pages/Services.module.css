@@ -1,0 +1,186 @@
+.pageHeader {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--px-lg);
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* ===== Main Services ===== */
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .serviceItem {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.serviceImageCol {
+  order: 0;
+}
+
+.serviceImageColReversed {
+  order: 0;
+}
+
+@media (min-width: 1024px) {
+  .serviceImageColReversed {
+    order: 2;
+  }
+}
+
+.serviceImage {
+  width: 100%;
+}
+
+.serviceTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.serviceTextColReversed {
+  order: 0;
+}
+
+@media (min-width: 1024px) {
+  .serviceTextColReversed {
+    order: 1;
+  }
+}
+
+.serviceIconBox {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceIconBox svg {
+  color: var(--color-body);
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.serviceDesc {
+  color: var(--color-body);
+  line-height: 1.7;
+}
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.serviceListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-body);
+  font-size: 0.9375rem;
+}
+
+.serviceListDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--color-faint);
+  flex-shrink: 0;
+}
+
+/* ===== Consulting ===== */
+.consultingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .consultingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.consultingItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.consultingIconBox {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.consultingIconBox svg {
+  color: var(--color-body);
+}
+
+.consultingTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+.consultingList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.consultingListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-body);
+  font-size: 0.875rem;
+}
+
+.consultingListDot {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--color-faint);
+  flex-shrink: 0;
+}

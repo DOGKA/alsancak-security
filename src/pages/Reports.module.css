@@ -1,0 +1,274 @@
+.pageHeader {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--px-lg);
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* ===== Report Cards ===== */
+.reportGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .reportGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.reportItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.reportIconBox {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reportIconBox svg {
+  color: var(--color-body);
+}
+
+.reportName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.25rem;
+}
+
+.reportProject {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.reportDesc {
+  color: var(--color-body);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  line-height: 1.7;
+}
+
+/* ===== Risk Framework ===== */
+.frameworkCard {
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .frameworkCard { padding: 3rem; }
+}
+
+.frameworkList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.frameworkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.frameworkIcon {
+  color: var(--color-accent);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.frameworkTitle {
+  color: var(--color-heading);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+
+.frameworkDesc {
+  color: var(--color-body);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+/* ===== Operational Points ===== */
+.opsCard {
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .opsCard { padding: 3rem; }
+}
+
+.opsTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.opsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== Incident Process ===== */
+.processList {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.processStep {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.processNumber {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.processLabel {
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.processLabel svg {
+  color: var(--color-muted);
+  flex-shrink: 0;
+}
+
+.processLabel span {
+  color: var(--color-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.processArrow {
+  color: var(--color-faint);
+  flex-shrink: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .processArrow { display: block; }
+}
+
+.responseTime {
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.responseTimeInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-heading);
+}
+
+.responseTimeInner span {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* ===== Sustainability ===== */
+.sustainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sustainGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.sustainImage {
+  width: 100%;
+}
+
+.sustainPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sustainPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.sustainIconBox {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sustainIconBox svg {
+  color: var(--color-body);
+}
+
+.sustainTitle {
+  color: var(--color-heading);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sustainDesc {
+  color: var(--color-body);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}

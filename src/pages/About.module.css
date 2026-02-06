@@ -1,0 +1,219 @@
+.pageHeader {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--px-lg);
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* ===== Overview Grid ===== */
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .overviewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.overviewImage {
+  width: 100%;
+}
+
+.overviewText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.overviewTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.overviewParagraph {
+  color: var(--color-body);
+  line-height: 1.7;
+}
+
+/* ===== Values Grid ===== */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .valuesGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.valueIcon {
+  color: var(--color-body);
+  margin-bottom: 1.25rem;
+}
+
+.valueTitle {
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  margin-bottom: 0.75rem;
+}
+
+.valueDesc {
+  color: var(--color-body);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ===== Org Chart ===== */
+.orgCard {
+  border-radius: 1.25rem;
+  padding: 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .orgCard { padding: 3rem; }
+}
+
+.orgList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.orgItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.orgDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.orgDotL0 { background: var(--color-heading); }
+.orgDotL1 { background: var(--color-body); }
+.orgDotL2 { background: var(--color-muted); }
+.orgDotL3 { background: var(--color-faint); }
+
+.orgLabel {
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  flex: 1;
+}
+
+.orgLabelText {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.orgLabelHighlight {
+  color: var(--color-heading);
+}
+
+.orgLabelNormal {
+  color: var(--color-body);
+}
+
+/* ===== Experience ===== */
+.expGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .expGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.expImage {
+  width: 100%;
+}
+
+.countryTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.countryTag {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.countryFlag {
+  font-size: 1.25rem;
+}
+
+.countryName {
+  color: var(--color-heading);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* ===== Leadership ===== */
+.leaderGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .leaderGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .leaderGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.leaderImage {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.leaderNamePlaceholder {
+  height: 1rem;
+  width: 8rem;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.leaderRolePlaceholder {
+  height: 0.75rem;
+  width: 6rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0.25rem;
+}
