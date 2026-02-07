@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Shield, Zap, Building2, Camera, Users, FileSearch, ArrowRight, ChevronRight, Cpu, Radar, Lock } from 'lucide-react';
+import { Shield, Zap, Building2, Camera, Users, FileSearch, ArrowRight, ChevronRight, Cpu, Radar, Lock, Globe, HeartHandshake, BarChart3, Lightbulb } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionTitle from '../components/ui/SectionTitle';
-import VideoMockup from '../components/ui/VideoMockup';
 import ImageMockup from '../components/ui/ImageMockup';
 import StatCounter from '../components/ui/StatCounter';
+import Globe3D from '../components/ui/Globe3D';
 import s from './Home.module.css';
 
 const reports = [
@@ -26,9 +26,12 @@ const services = [
 ];
 
 const featuredProjects = [
-  { title: 'Avrupa Birliği Türkiye Delegasyonu', period: "2013'ten Günümüze", desc: 'AB Türkiye Delegasyonu için kapsamlı güvenlik hizmetleri.', imgSrc: '/images/proje-ab-delegasyonu.png' },
+  { title: 'Delegation of the European Union to Turkey', period: "2013'ten Günümüze", desc: 'AB Türkiye Delegasyonu için kapsamlı güvenlik hizmetleri.', imgSrc: '/images/proje-ab-delegasyonu.png' },
   { title: 'Transatlantic Petroleum LLC', period: "2018'den Bugüne", desc: 'Enerji sektöründe sürekli güvenlik ve danışmanlık hizmetleri.', imgSrc: '/images/proje-transatlantic.png' },
-  { title: 'Anagold Madencilik A.Ş.', period: "2016'dan Günümüze", desc: 'Madencilik operasyonları için entegre güvenlik çözümleri.', imgSrc: '/images/proje-anagold.png' },
+  { title: 'Anagold Madencilik A.Ş.', period: "2023'ten Günümüze", desc: 'Madencilik operasyonları için entegre güvenlik çözümleri.', imgSrc: '/images/proje-anagold.png' },
+  { title: 'USAID', period: "2015 - 2020", desc: 'Kabil, Kandahar, Ghazni ve Herat bölgelerinde güvenlik hizmetleri.', imgSrc: '/images/proje-usaid.png' },
+  { title: 'WCK (World Central Kitchen)', period: "2023 - 2024", desc: 'Depremden etkilenen 8 ilde güvenlik hizmetleri.', imgSrc: '/images/proje-wck.png' },
+  { title: 'Andritz Hydro Ltd. - ILISU Barajı', period: "2013 - 2016", desc: 'ILISU Barajı ve HES Projesi için güvenlik ve danışmanlık.', imgSrc: '/images/proje-ilisu.png' },
 ];
 
 const certificates = [
@@ -50,15 +53,14 @@ export default function Home() {
       {/* HERO */}
       <section className={s.hero}>
         <div className={s.heroBg}>
-          <VideoMockup width={1920} height={1080} alt="Hero arka plan videosu" src="/images/hero-video.mp4" className={s.heroBgVideo} />
-          <div className={s.heroOverlay} />
+          <video src="/images/hero-video.mp4" autoPlay muted loop playsInline className={s.heroVideo} />
         </div>
         <div className={s.heroContent}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <span className={s.heroTag}>Kritik Sahalarda Kesintisiz Güvenlik</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className={s.heroTitle}>
-            <span>ALSANCAK</span><br />
+            <span>ALSANCAK </span>
             <span className={s.heroTitleAccent}>GÜVENLİK</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className={s.heroDesc}>
@@ -71,32 +73,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* STATS + GLOBE */}
       <section className={s.stats}>
         <div className={s.container}>
-          <div className={s.statsCard}>
-            <div className={s.statsGlow} />
-            <div className={s.statsInner}>
-              <div className={s.statsGrid}>
-                {[
-                  { end: 19, suffix: '+', label: 'Yıllık Tecrübe', accent: 'linear-gradient(135deg, #1d1d1f, #444)' },
-                  { end: 7, suffix: '+', label: 'Ülkede Operasyon', accent: 'linear-gradient(135deg, #c0392b, #e74c3c)' },
-                  { end: 20, suffix: '+', label: 'Başarılı Proje', accent: 'linear-gradient(135deg, #1d1d1f, #444)' },
-                  { end: 10, suffix: '+', label: 'ISO Sertifikası', accent: 'linear-gradient(135deg, #c0392b, #e74c3c)' },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={s.statItem}
-                  >
-                    <div className={s.statAccent} style={{ background: stat.accent }} />
-                    <StatCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
-                  </motion.div>
-                ))}
-              </div>
+          <div className={s.statsLayout}>
+            <div className={s.globeWrap}>
+              <Globe3D />
+            </div>
+            <div className={s.statsRight}>
+              {[
+                { end: 19, suffix: '+', label: 'Yıllık Tecrübe' },
+                { end: 7, suffix: '+', label: 'Ülkede Operasyon' },
+                { end: 20, suffix: '+', label: 'Başarılı Proje' },
+                { end: 10, suffix: '+', label: 'ISO Sertifikası' },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={s.statItem}
+                >
+                  <StatCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -172,23 +173,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INNOVATION */}
+      {/* INNOVATION & VISION */}
       <section className={`${s.section} section-divider`}>
         <div className={s.container}>
-          <SectionTitle subtitle="Yenilikçi Projeler" title="Geleceğin Güvenlik Teknolojileri" />
-          <div className={s.innovGrid}>
+          <SectionTitle subtitle="Gelecek Vizyonu" title="Yenilik ve Gelecek Stratejileri" description="Teknolojik gelişmeler, sürdürülebilir uygulamalar ve insan merkezli değerlerle güvenlik sektöründe yeni standartlar belirliyoruz." />
+          <div className={s.masonryGrid}>
             {[
-              { icon: Cpu, title: 'Entegre Akıllı Güvenlik Çözümleri', desc: 'Alsancak Güvenlik, entegre akıllı güvenlik çözümleri geliştirmek için en son teknolojilere yatırım yapıyor. Bu, gerçek zamanlı tehdit algılama ve müdahale yeteneklerini geliştirmek için yapay zeka, IoT cihazları ve gelişmiş analitiğin dahil edilmesini içerir.' },
-              { icon: Radar, title: 'Drone ile Gözetleme ve İzleme', desc: 'Gözetim kabiliyetlerimizi artırmayı hedefleyen Alsancak, geniş alanların daha iyi izlenmesi için insansız hava araçlarının kullanımını araştırıyor. Bu girişim, potansiyel güvenlik tehditlerine karşı hızlı ve çok yönlü bir yanıt sağlayacaktır.' },
-              { icon: Lock, title: 'Veri Güvenliği İçin Blok Zinciri', desc: 'Veri güvenliğinin öneminin farkında olan Alsancak, hassas bilgileri güvence altına almak için blok zinciri teknolojisinin uygulanmasını araştırıyor. Bu girişim, giderek dijitalleşen bir ortamda verilerin bütünlüğünü ve gizliliğini sağlamaktadır.' },
+              { icon: Cpu, title: 'Entegre Akıllı Güvenlik Çözümleri', desc: 'Yapay zeka, IoT cihazları ve gelişmiş analitik ile gerçek zamanlı tehdit algılama ve müdahale yeteneklerini geliştiriyoruz. Entegre sistemler sayesinde güvenlik operasyonlarını tek merkezden yönetiyoruz.', size: 'lg' },
+              { icon: Radar, title: 'Drone ile Gözetleme', desc: 'İnsansız hava araçları ile geniş alanların etkin izlenmesi, potansiyel tehditlere karşı hızlı ve çok yönlü müdahale kapasitesi sunuyoruz.', size: 'sm' },
+              { icon: Lock, title: 'Blok Zinciri Veri Güvenliği', desc: 'Blok zinciri teknolojisi ile hassas bilgileri güvence altına alarak dijital ortamda verilerin bütünlüğünü ve gizliliğini garanti ediyoruz.', size: 'sm' },
+              { icon: Globe, title: 'Küresel Genişleme', desc: 'Kilit bölgelerde kapsamlı güvenlik hizmetleri sunarak küresel ayak izimizi genişletiyor, uluslararası kuruluşlar için güvenilir bir ortak olarak konumlanıyoruz.', size: 'md' },
+              { icon: BarChart3, title: 'Önleyici Güvenlik Analizleri', desc: 'Veri analitiği ve tahmine dayalı modelleme ile güvenlik risklerini önceden öngörüyor, kaynak tahsisini optimize ederek proaktif tehdit yönetimi sağlıyoruz.', size: 'md' },
+              { icon: HeartHandshake, title: 'Çalışan Gelişimi ve Refahı', desc: 'Motivasyonu yüksek ve yetenekli ekibimize sürekli eğitim, kariyer geliştirme fırsatları sunuyor ve çalışan refahını önceliklendiriyoruz.', size: 'sm' },
+              { icon: Lightbulb, title: 'Bütünsel Güvenlik Yaklaşımı', desc: 'Sürdürülebilir uygulamalar, küresel erişim ve insan merkezli değerleri kapsayan bütünsel bir güvenlik vizyonu ile sektörde yeni standartlar belirliyoruz.', size: 'sm' },
             ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={s.innovCard}>
-                <div className={s.innovIconWrap}>
-                  <item.icon size={24} />
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ scale: 1.04, zIndex: 10 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className={`${s.masonryCard} ${s[`masonry_${item.size}`]}`}
+              >
+                <div className={s.masonryHeader}>
+                  <item.icon className={s.masonryIcon} />
+                  <h3 className={s.masonryTitle}>{item.title}</h3>
                 </div>
-                <h3 className={s.innovTitle}>{item.title}</h3>
-                <p className={s.innovDesc}>{item.desc}</p>
+                <p className={s.masonryDesc}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -218,8 +230,6 @@ export default function Home() {
       <section className={`${s.section} section-divider`}>
         <div className={s.container}>
           <div className={s.ctaWrapper}>
-            <div className={s.ctaBg} />
-            <div className={s.ctaRadial} />
             <div className={s.ctaContent}>
               <h2 className={s.ctaTitle}>Güvenliğiniz İçin Yanınızdayız</h2>
               <p className={s.ctaDesc}>Profesyonel güvenlik çözümlerimiz hakkında bilgi almak ve ihtiyaçlarınıza özel teklif için bizimle iletişime geçin.</p>

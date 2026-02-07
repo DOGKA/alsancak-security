@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Target, Award, Scale } from 'lucide-react';
+import { Shield, Target, Award, Scale, User } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
@@ -24,7 +24,7 @@ const operationalAreas = [
   { country: 'Türkiye', flag: '🇹🇷' }, { country: 'Afganistan', flag: '🇦🇫' },
   { country: 'Irak', flag: '🇮🇶' }, { country: 'Libya', flag: '🇱🇾' },
   { country: 'Somali', flag: '🇸🇴' }, { country: 'Uganda', flag: '🇺🇬' },
-  { country: 'Aden Körfezi', flag: '⚓' },
+  { country: 'Suriye', flag: '🇸🇾' }, { country: 'Aden Körfezi', flag: '⚓' },
 ];
 
 const coreValues = [
@@ -143,12 +143,21 @@ export default function About() {
         <div className={s.container}>
           <SectionTitle subtitle="Ekibimiz" title="Liderlik Kadrosu" description="Yöneticilerimiz Türk Silahlı Kuvvetleri ve Emniyet Genel Müdürlüğü bünyesinde önemli görevlerde bulunmuştur." />
           <div className={s.leaderGrid}>
-            {[1, 2, 3, 4].map((_, i) => (
-              <GlassCard key={i} delay={i * 0.08}>
-                <ImageMockup width={280} height={320} alt={`Yönetici ${i + 1} profil fotoğrafı (280x320)`} className={s.leaderImage} />
-                <div className={s.leaderNamePlaceholder} />
-                <div className={s.leaderRolePlaceholder} />
-              </GlassCard>
+            {[
+              { role: 'Genel Koordinatör', bg: 'TSK Emekli Albay', exp: '28 yıl askeri deneyim, NATO operasyonları ve kriz yönetimi uzmanı.' },
+              { role: 'Güvenlik Direktörü', bg: 'Emniyet Emekli Başkomiser', exp: '24 yıl emniyet teşkilatı deneyimi, istihbarat ve terörle mücadele.' },
+              { role: 'Operasyon Müdürü', bg: 'TSK Emekli Binbaşı', exp: '22 yıl saha operasyonları, lojistik planlama ve personel yönetimi.' },
+              { role: 'Risk Analiz Direktörü', bg: 'Akademisyen / Güvenlik Uzmanı', exp: '18 yıl akademik araştırma, uluslararası güvenlik politikaları ve risk modelleme.' },
+            ].map((leader, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={s.leaderCard}>
+                <div className={s.leaderAvatar}>
+                  <User size={32} />
+                </div>
+                <h4 className={s.leaderRole}>{leader.role}</h4>
+                <span className={s.leaderBg}>{leader.bg}</span>
+                <p className={s.leaderExp}>{leader.exp}</p>
+              </motion.div>
             ))}
           </div>
         </div>

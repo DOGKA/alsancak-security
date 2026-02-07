@@ -274,22 +274,55 @@
   .leaderGrid { grid-template-columns: repeat(4, 1fr); }
 }
 
-.leaderImage {
-  width: 100%;
-  margin-bottom: 1.25rem;
+.leaderCard {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
-.leaderNamePlaceholder {
-  height: 1rem;
-  width: 8rem;
-  background: rgba(0, 0, 0, 0.06);
-  border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
+.leaderCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
 }
 
-.leaderRolePlaceholder {
-  height: 0.75rem;
-  width: 6rem;
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 0.25rem;
+.leaderAvatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--color-muted);
+}
+
+.leaderRole {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.375rem;
+}
+
+.leaderBg {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.leaderExp {
+  font-size: 0.8125rem;
+  color: var(--color-body);
+  line-height: 1.7;
 }

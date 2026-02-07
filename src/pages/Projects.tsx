@@ -13,7 +13,7 @@ const ongoingProjects = [
   { title: 'Production Solution', period: "2018'den Bugüne", desc: 'Üretim çözümleri kapsamında güvenlik hizmetleri.', imgAlt: 'Production Solution proje görseli', imgSrc: '/images/proje-production-solution.png' },
   { title: 'Delegation of the European Union to Turkey', period: "2013'ten Günümüze", desc: 'Avrupa Birliği Türkiye Delegasyonu için kapsamlı güvenlik hizmetleri.', imgAlt: 'AB Delegasyonu proje görseli', imgSrc: '/images/proje-ab-delegasyonu.png' },
   { title: 'NVT Turkse Perenco', period: "2020'den Günümüze", desc: 'Enerji sektöründe güvenlik ve izleme hizmetleri.', imgAlt: 'NVT Turkse Perenco proje görseli', imgSrc: '/images/proje-nvt-perenco.png' },
-  { title: 'Anagold Madencilik A.Ş.', period: "2016'dan Günümüze", desc: 'Madencilik operasyonları için entegre güvenlik çözümleri.', imgAlt: 'Anagold Madencilik proje görseli', imgSrc: '/images/proje-anagold.png' },
+  { title: 'Anagold Madencilik A.Ş.', period: "2023'ten Günümüze", desc: 'Madencilik operasyonları için entegre güvenlik çözümleri.', imgAlt: 'Anagold Madencilik proje görseli', imgSrc: '/images/proje-anagold.png' },
 ];
 
 const completedProjects = [

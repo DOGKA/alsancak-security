@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Anchor, Calendar } from 'lucide-react';
-import GlassCard from '../components/ui/GlassCard';
+import { Anchor, Calendar } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
 import s from './Certificates.module.css';
@@ -40,19 +39,13 @@ export default function Certificates() {
           <SectionTitle subtitle="ISO" title="ISO Sertifikaları" description="10 uluslararası ISO standardı ile belgelenmiş kalite ve güvenlik yönetimi." />
           <div className={s.isoGrid}>
             {isoCerts.map((cert, i) => (
-              <GlassCard key={cert.code} delay={i * 0.06}>
-                <div className={s.isoHeader}>
-                  <div className={s.isoIconBox}>
-                    <Award size={18} />
-                  </div>
-                  <div className={s.isoTextWrap}>
-                    <span className={s.isoCode}>{cert.code}</span>
-                    <h4 className={s.isoTitle}>{cert.title}</h4>
-                    <p className={s.isoTitleEn}>{cert.titleEn}</p>
-                  </div>
-                </div>
-                <ImageMockup width={340} height={120} alt={`${cert.code} sertifika görseli (340x120)`} className={s.isoImage} />
-              </GlassCard>
+              <motion.div key={cert.code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}
+                className={s.isoCard}>
+                <div className={s.isoNumber}>{String(i + 1).padStart(2, '0')}</div>
+                <span className={s.isoCode}>{cert.code}</span>
+                <h4 className={s.isoTitle}>{cert.title}</h4>
+                <p className={s.isoTitleEn}>{cert.titleEn}</p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -62,7 +55,7 @@ export default function Certificates() {
         <div className={s.container}>
           <SectionTitle subtitle="Denizcilik" title="ISPS Code 2014-2017" description="RSO (Recognized Security Organisation) olarak liman tesisleri güvenliğinde deneyim." />
           <div className={s.ispsGrid}>
-            <ImageMockup width={500} height={300} alt="ISPS Code liman güvenliği görseli" className={s.ispsImage} />
+            <ImageMockup width={500} height={300} alt="ISPS Code liman güvenliği görseli" src="/images/isps-code-2014-2017.png" className={s.ispsImage} />
             <div className={s.ispsList}>
               {ispsProjects.map((project, i) => (
                 <motion.div key={project.name} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
