@@ -51,9 +51,9 @@ export const menuData: MenuItem[] = [
         link: '/hakkimizda#deneyim',
       },
       {
-        title: 'Liderlik Kadrosu',
-        description: 'TSK ve Emniyet kökenli deneyimli yönetim ekibimiz',
-        imageAlt: 'Liderlik kadrosu görseli',
+        title: 'Basında Biz',
+        description: 'Alsancak Güvenlik basında ve medyada',
+        imageAlt: 'Basında biz görseli',
         imageWidth: 80,
         imageHeight: 52,
         imageSrc: '/images/liderlik-kadrosu.png',
