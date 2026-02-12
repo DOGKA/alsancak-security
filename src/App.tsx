@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Reports from './pages/Reports';
 import Certificates from './pages/Certificates';
+import Training from './pages/Training';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="projelerimiz" element={<Projects />} />
           <Route path="raporlama" element={<Reports />} />
           <Route path="sertifikalar" element={<Certificates />} />
+          <Route path="egitim" element={<Training />} />
           <Route path="iletisim" element={<Contact />} />
         </Route>
       </Routes>

@@ -12,16 +12,16 @@ import s from './Home.module.css';
 const reports = [
   { title: 'Güvenlik Raporları', desc: 'Günlük, haftalık ve aylık güvenlik değerlendirme raporları.', imgSrc: '/images/yeni-guvenlik-raporlari.png', link: '/raporlama#raporlar' },
   { title: 'Risk Yönetimi', desc: 'Kapsamlı risk analizi ve tehdit değerlendirme çerçevesi.', imgSrc: '/images/yeni-risk-yonetimi.png', link: '/raporlama#risk' },
-  { title: 'Vaka Yönetim Süreci', desc: 'Hızlı müdahale ekibi ve alarm izleme merkezi süreçleri.', imgSrc: '/images/yeni-vaka-yonetimi.png', link: '/raporlama#vaka' },
+  { title: 'Olay Yönetim Süreci', desc: 'Hızlı müdahale ekibi ve alarm izleme merkezi süreçleri.', imgSrc: '/images/yeni-vaka-yonetimi.png', link: '/raporlama#vaka' },
   { title: 'Sürdürülebilirlik', desc: 'Çevre bilinci ve sürdürülebilir güvenlik uygulamaları.', imgSrc: '/images/yeni-surdurulebilirlik.png', link: '/raporlama#surdurulebilirlik' },
 ];
 
 const services = [
-  { icon: Shield, title: 'Fiziksel Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı güvenlik.', imgSrc: '/images/yeni-fiziksel.png', link: '/hizmetlerimiz#fiziksel' },
-  { icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hatları, hidroelektrik santraller ve kamu tesisleri güvenliği.', imgSrc: '/images/yeni-enerji-tesis.png', link: '/hizmetlerimiz#enerji' },
+  { icon: Shield, title: 'Fiziki Güvenlik', desc: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar için kapsamlı güvenlik.', imgSrc: '/images/yeni-fiziksel.png', link: '/hizmetlerimiz#fiziksel' },
+  { icon: Zap, title: 'Enerji ve Tesis Güvenliği', desc: 'Petrol/gaz hatları, hidroelektrik santraller, maden sahaları ve kamu tesisleri güvenliği.', imgSrc: '/images/yeni-enerji-tesis.png', link: '/hizmetlerimiz#enerji' },
   { icon: Building2, title: 'Kritik Altyapı Güvenliği', desc: 'Barajlar, köprüler, karayolları ve bina projelerinde güvenlik hizmetleri.', imgSrc: '/images/yeni-kritik-altyapi.png', link: '/hizmetlerimiz#altyapi' },
-  { icon: Camera, title: 'Uzaktan İzleme', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri.', imgSrc: '/images/yeni-uzaktan-izleme.png', link: '/hizmetlerimiz#izleme' },
-  { icon: Users, title: 'İnsanlı Güvenlik', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri.', imgSrc: '/images/yeni-insanli.png', link: '/hizmetlerimiz#insanli' },
+  { icon: Camera, title: 'İzleme ve Kontrol', desc: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri.', imgSrc: '/images/yeni-uzaktan-izleme.png', link: '/hizmetlerimiz#izleme' },
+  { icon: Users, title: 'Profesyonel Koruma', desc: 'Yakın koruma ve seyahat yönetimi hizmetleri.', imgSrc: '/images/yeni-insanli.png', link: '/hizmetlerimiz#insanli' },
   { icon: FileSearch, title: 'Danışmanlık', desc: 'Risk değerlendirme, HEAT eğitimi ve güvenlik açığı analizleri.', imgSrc: '/images/yeni-danismanlik.png', link: '/hizmetlerimiz#danismanlik' },
 ];
 
@@ -44,7 +44,8 @@ const certificates = [
   { code: 'ISO 37001:2016', title: 'Rüşvetle Mücadele' },
   { code: 'ISO 22301:2019', title: 'İş Sürekliliği' },
   { code: 'ISO 41001:2018', title: 'Tesis Yönetimi' },
-  { code: 'ISO 44001:2017', title: 'İş Ortağı İlişkileri' },
+  { code: 'ISO 44001:2017', title: 'Ortak İş İlişkileri' },
+  { code: 'ISO 9001:2015', title: 'Kalite Yönetimi' },
 ];
 
 export default function Home() {
@@ -57,7 +58,7 @@ export default function Home() {
         </div>
         <div className={s.heroContent}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-            <span className={s.heroTag}>Kritik Sahalarda Kesintisiz Güvenlik</span>
+            <span className={s.heroTag}>Kesintisiz Güvenlik</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className={s.heroTitle}>
             <span>ALSANCAK </span>
@@ -85,7 +86,7 @@ export default function Home() {
                 { end: 19, suffix: '+', label: 'Yıllık Tecrübe' },
                 { end: 7, suffix: '+', label: 'Ülkede Operasyon' },
                 { end: 20, suffix: '+', label: 'Başarılı Proje' },
-                { end: 10, suffix: '+', label: 'ISO Sertifikası' },
+                { end: 11, suffix: '+', label: 'ISO Sertifikası' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -210,7 +211,7 @@ export default function Home() {
       {/* CERTIFICATES */}
       <section className={`${s.certsSection} section-alt section-divider`}>
         <div className={s.certsContent}>
-          <SectionTitle subtitle="Kalite" title="Sertifikalarımız" description="Uluslararası standartlara uygun 10 ISO sertifikası ile hizmet kalitemizi belgeliyoruz." />
+          <SectionTitle subtitle="Kalite" title="Sertifikalarımız" description="Uluslararası standartlara uygun 11 ISO sertifikası ile hizmet kalitemizi belgeliyoruz." />
         </div>
         <div className={s.certsTrack}>
           <div className={s.certsFadeLeft} />

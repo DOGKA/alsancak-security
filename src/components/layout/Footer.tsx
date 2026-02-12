@@ -13,7 +13,7 @@ export default function Footer() {
     { title: 'Uzaktan İzleme', path: '/hizmetlerimiz#izleme' }, { title: 'Danışmanlık', path: '/hizmetlerimiz#danismanlik' },
   ];
   const otherLinks = [
-    { title: 'Raporlama', path: '/raporlama' }, { title: 'Sertifikalar', path: '/sertifikalar' }, { title: 'İletişim', path: '/iletisim' },
+    { title: 'Raporlama', path: '/raporlama' }, { title: 'Sertifikalar', path: '/sertifikalar' }, { title: 'Eğitim', path: '/egitim' }, { title: 'İletişim', path: '/iletisim' },
   ];
 
   return (
@@ -30,7 +30,7 @@ export default function Footer() {
             </Link>
             <p className={s.brandDesc}>2007'den bu yana enerji, inşaat ve madencilik sektörlerine profesyonel güvenlik hizmetleri sunan güvenilir ortağınız.</p>
             <div className={s.contactInfo}>
-              <div className={s.contactItem}><MapPin size={14} className={s.contactItemIcon} /><span>Cezayir Cd. 6/7, 06550 Ankara</span></div>
+              <div className={s.contactItem}><MapPin size={14} className={s.contactItemIcon} /><span>Yıldızevler Mah. Cezayir Cd. 6/7, 06550 Ankara</span></div>
               <div className={s.contactItem}><Mail size={14} className={s.contactItemIcon} /><span>info@alsancakguvenlik.com</span></div>
               <div className={s.contactItem}><Globe size={14} className={s.contactItemIcon} /><span>alsancakgrup.com.tr</span></div>
             </div>

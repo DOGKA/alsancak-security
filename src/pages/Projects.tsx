@@ -15,10 +15,10 @@ const ongoingProjects = [
   { title: 'Singapur Büyükelçiliği', period: "2024'ten Günümüze", desc: 'Singapur Büyükelçiliği için güvenlik hizmetleri.', imgAlt: 'Singapur Büyükelçiliği proje görseli', imgSrc: '/images/singapur-buyukelcilik.png' },
   { title: 'Anagold Madencilik A.Ş.', period: "2024'ten Günümüze", desc: 'Madencilik operasyonları için entegre güvenlik çözümleri.', imgAlt: 'Anagold Madencilik proje görseli', imgSrc: '/images/proje-anagold.png' },
   { title: 'ECHO (AB İnsani Yardım)', period: "2024'ten Günümüze", desc: 'Avrupa Birliği İnsani Yardım Organizasyonu için güvenlik hizmetleri.', imgAlt: 'ECHO proje görseli', imgSrc: '/images/echo.png' },
-  { title: 'NVT Perenco', period: "2016 - 2025", desc: 'Enerji sektöründe güvenlik ve izleme hizmetleri.', imgAlt: 'NVT Perenco proje görseli', imgSrc: '/images/nvt-perenco.png' },
 ];
 
 const completedProjects = [
+  { title: 'NVT Perenco', period: '2016 - 2025', desc: 'Enerji sektöründe güvenlik ve izleme hizmetleri.', imgAlt: 'NVT Perenco proje görseli', imgSrc: '/images/nvt-perenco.png' },
   { title: 'USAID', period: '2015 - 2020', desc: "Kabil, Kandahar, Ghazni ve Herat bölgelerinde güvenlik hizmetleri.", imgAlt: 'USAID projesi görseli', imgSrc: '/images/proje-usaid.png' },
   { title: 'WCK (World Central Kitchen)', period: '2023 - 2024', desc: "Depremden etkilenen 8 ilde güvenlik hizmetleri.", imgAlt: 'WCK projesi görseli', imgSrc: '/images/proje-wck.png' },
   { title: 'Andritz Hydro Ltd. - ILISU Barajı ve HES', period: '2013 - 2016', desc: 'ILISU Barajı ve HES Projesi için güvenlik ve danışmanlık.', imgAlt: 'ILISU Barajı proje görseli', imgSrc: '/images/proje-ilisu.png' },

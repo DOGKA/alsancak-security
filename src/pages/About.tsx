@@ -49,7 +49,7 @@ export default function About() {
           <div className={s.overviewGrid}>
             <ImageMockup width={500} height={300} alt="Alsancak Grup Güvenlik şirket binası / ekip fotoğrafı" src="/images/sirket-binasi.png" className={s.overviewImage} />
             <div className={s.overviewText}>
-              <h3 className={s.overviewTitle}>2007'den Bu Yana Güvenliğinizde</h3>
+              <h3 className={s.overviewTitle}>2007'den Bugüne Hizmetinizdeyiz</h3>
               <p className={s.overviewParagraph}>Alsancak Group, Türkiye'de ve ötesinde enerji, inşaat ve madencilik sektörlerine özel olarak odaklanarak hem önde gelen uluslararası hem de yerel kuruluşlara benzersiz destek sunan profesyonel güvenlik hizmetlerinin öncüsüdür.</p>
               <p className={s.overviewParagraph}>Lider kadromuz, Türk Silahlı Kuvvetleri ve Emniyet Genel Müdürlüğü'nde önemli görevlerde bulunmuş, zengin deneyim ve uzmanlığa sahip kişilerden oluşmaktadır.</p>
               <p className={s.overviewParagraph}>Bu çeşitlilik, risk analizi ve tehdit değerlendirmelerine kapsamlı bir yaklaşım getirilmesini sağlamaktadır.</p>

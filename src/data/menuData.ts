@@ -66,9 +66,9 @@ export const menuData: MenuItem[] = [
     path: '/hizmetlerimiz',
     subItems: [
       {
-        title: 'Fiziksel Güvenlik',
+        title: 'Fiziki Güvenlik',
         description: 'Şirket merkezleri, rezidanslar, büyükelçilikler ve fabrikalar',
-        imageAlt: 'Fiziksel güvenlik hizmeti görseli',
+        imageAlt: 'Fiziki güvenlik hizmeti görseli',
         imageWidth: 80,
         imageHeight: 52,
         imageSrc: '/images/yeni-fiziksel.png',
@@ -93,18 +93,18 @@ export const menuData: MenuItem[] = [
         link: '/hizmetlerimiz#altyapi',
       },
       {
-        title: 'Uzaktan İzleme',
+        title: 'İzleme ve Kontrol',
         description: 'CCTV, alarm izleme merkezi ve izinsiz giriş tespit sistemleri',
-        imageAlt: 'Uzaktan izleme sistemi görseli',
+        imageAlt: 'İzleme ve kontrol sistemi görseli',
         imageWidth: 80,
         imageHeight: 52,
         imageSrc: '/images/yeni-uzaktan-izleme.png',
         link: '/hizmetlerimiz#izleme',
       },
       {
-        title: 'İnsanlı Güvenlik',
+        title: 'Profesyonel Koruma',
         description: 'Yakın koruma ve seyahat yönetimi hizmetleri',
-        imageAlt: 'İnsanlı güvenlik görseli',
+        imageAlt: 'Profesyonel koruma görseli',
         imageWidth: 80,
         imageHeight: 52,
         imageSrc: '/images/yeni-insanli.png',
@@ -168,9 +168,9 @@ export const menuData: MenuItem[] = [
         link: '/raporlama#risk',
       },
       {
-        title: 'Vaka Yönetim Süreci',
+        title: 'Olay Yönetim Süreci',
         description: 'Hızlı müdahale ekibi ve alarm izleme merkezi süreçleri',
-        imageAlt: 'Vaka yönetim süreci görseli',
+        imageAlt: 'Olay yönetim süreci görseli',
         imageWidth: 80,
         imageHeight: 52,
         imageSrc: '/images/yeni-vaka-yonetimi.png',
@@ -210,6 +210,10 @@ export const menuData: MenuItem[] = [
         link: '/sertifikalar#isps',
       },
     ],
+  },
+  {
+    title: 'Eğitim',
+    path: '/egitim',
   },
   {
     title: 'İletişim',

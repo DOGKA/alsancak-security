@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: MapPin, title: 'Merkez Ofis', lines: ['Cezayir Cd. 6/7', '06550 Ankara, Türkiye'] },
+    { icon: MapPin, title: 'Merkez Ofis', lines: ['Yıldızevler Mah. Cezayir Cd. 6/7', '06550 Ankara, Türkiye'] },
     { icon: Mail, title: 'E-Posta', lines: ['info@alsancakguvenlik.com'] },
     { icon: Globe, title: 'Web', lines: ['alsancakgrup.com.tr', 'alsancakguvenlik.com'] },
   ];

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FileText, AlertTriangle, ArrowRight, Shield, Bell, Users, Leaf, CheckCircle, Clock } from 'lucide-react';
+import { FileText, AlertTriangle, ArrowRight, Shield, Bell, Users, Leaf } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
 import s from './Reports.module.css';
@@ -21,17 +21,10 @@ const riskFramework = [
 ];
 
 const incidentProcess = [
-  { step: 'VAKA', icon: AlertTriangle }, { step: 'İLK AĞIZDAN FLAŞ RAPOR', icon: FileText },
+  { step: 'OLAY', icon: AlertTriangle }, { step: 'FLAŞ RAPOR', icon: FileText },
   { step: 'KORUMA PERSONELİ', icon: Shield }, { step: 'İLİŞKİ YÖNETİCİSİ', icon: Users },
-  { step: 'ALSANCAK ALARM MERKEZİ', icon: Bell }, { step: 'Q.R.T (Hızlı Müdahale Ekibi)', icon: Shield },
+  { step: 'ALARM MERKEZİ', icon: Bell }, { step: 'Q.R.T (Hızlı Müdahale Ekibi)', icon: Shield },
   { step: 'BÜYÜKELÇİLİK/ENSTİTÜ BİLGİLENDİRME', icon: FileText },
-];
-
-const operationalPoints = [
-  { title: 'Yardım Faaliyeti Optimizasyonu', desc: 'Kritik durumlarda hızlı ve etkili müdahaleler sağlayarak yardım faaliyetlerinin verimliliğini artırıyoruz.' },
-  { title: 'Hükümet ve Halkla İlişkiler', desc: 'Yerel ve kamu yetkilileriyle olumlu ilişkiler kurulmasına aktif olarak yardımcı oluyoruz.' },
-  { title: 'Altyapı Planlaması', desc: 'SASE Dağıtım Noktalarını belirlemeye ve kaynakları stratejik olarak yerleştiriyoruz.' },
-  { title: 'Tesis Standartları', desc: 'Korumamız altındaki kişilerin refahını sağlamak için konforlu ve hijyenik tesisler sunuyoruz.' },
 ];
 
 const sustainabilityPoints = [
@@ -81,27 +74,12 @@ export default function Reports() {
             ))}
           </div>
 
-          <div className={s.opsDivider} />
-
-          <SectionTitle subtitle="Operasyonel" title="Önemli Operasyonel Noktalar" />
-          <div className={s.opsGrid}>
-            {operationalPoints.map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
-                className={s.opsCard}>
-                <div className={s.opsIconWrap}>
-                  <CheckCircle size={20} />
-                </div>
-                <h5 className={s.opsTitle}>{item.title}</h5>
-                <p className={s.opsDesc}>{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       <section id="vaka" className={`${s.section} section-alt section-divider`}>
         <div className={s.container}>
-          <SectionTitle subtitle="Vaka Yönetimi" title="Vaka Yönetim Süreci" description="Q.R.T: Hızlı Müdahale Ekibimiz ve Alarm İzleme Merkezimiz, prosedürel gerekliliklerden tam not alan ilk şirkettir." />
+          <SectionTitle subtitle="Olay Yönetimi" title="Olay Yönetim Süreci" description="Q.R.T: Hızlı Müdahale Ekibimiz ve Alarm İzleme Merkezimiz, prosedürel gerekliliklerden tam not alan ilk şirkettir." />
           <div className={s.processList}>
             {incidentProcess.map((step, i) => (
               <motion.div key={step.step} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
@@ -114,12 +92,6 @@ export default function Reports() {
                 {i < incidentProcess.length - 1 && <ArrowRight size={14} className={s.processArrow} />}
               </motion.div>
             ))}
-            <div className={`glass ${s.responseTime}`}>
-              <div className={s.responseTimeInner}>
-                <Clock size={14} />
-                <span>Maksimum Müdahale Süresi: 10 Dakika</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>

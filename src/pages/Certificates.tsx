@@ -10,11 +10,12 @@ const isoCerts = [
   { code: 'ISO 27001:2013', title: 'Bilgi Güvenliği Yönetim Sistemi', titleEn: 'Information Security Management System' },
   { code: 'ISO 14001:2015', title: 'Çevre Yönetim Sistemi', titleEn: 'Environmental Management System' },
   { code: 'ISO 10002:2018', title: 'Kalite Yönetimi - Müşteri Memnuniyeti', titleEn: 'Quality Management Customer Satisfaction' },
-  { code: 'ISO 44001:2017', title: 'İş Ortağı İlişkileri Yönetim Sistemi', titleEn: 'Partner Business Relationship Management System' },
+  { code: 'ISO 44001:2017', title: 'Ortak İş İlişkileri Yönetim Sistemi', titleEn: 'Collaborative Business Relationship Management Systems' },
   { code: 'ISO 41001:2018', title: 'Tesis Yönetim Sistemi', titleEn: 'Facility Management System' },
   { code: 'ISO 37001:2016', title: 'Rüşvetle Mücadele Yönetim Sistemi', titleEn: 'Anti-Bribery Management System' },
   { code: 'ISO 31000:2018', title: 'Risk Yönetim Sistemi', titleEn: 'Risk Management System' },
   { code: 'ISO 22301:2019', title: 'İş Sürekliliği Yönetim Sistemi', titleEn: 'Business Continuity Management System' },
+  { code: 'ISO 9001:2015', title: 'Kalite Yönetim Sistemi', titleEn: 'Quality Management System' },
 ];
 
 const ispsProjects = [
@@ -36,7 +37,7 @@ export default function Certificates() {
 
       <section id="iso" className={`${s.section} section-alt section-divider`}>
         <div className={s.container}>
-          <SectionTitle subtitle="ISO" title="ISO Sertifikaları" description="10 uluslararası ISO standardı ile belgelenmiş kalite ve güvenlik yönetimi." />
+          <SectionTitle subtitle="ISO" title="ISO Sertifikaları" description="11 uluslararası ISO standardı ile belgelenmiş kalite ve güvenlik yönetimi." />
           <div className={s.isoGrid}>
             {isoCerts.map((cert, i) => (
               <motion.div key={cert.code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}
