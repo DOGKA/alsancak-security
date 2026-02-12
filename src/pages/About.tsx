@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Target, Award, Scale, User } from 'lucide-react';
+import { Shield, Target, Award, Scale } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
@@ -139,29 +139,6 @@ export default function About() {
         </div>
       </section>
 
-      <section id="liderlik" className={`${s.section} section-alt section-divider`}>
-        <div className={s.container}>
-          <SectionTitle subtitle="Ekibimiz" title="Liderlik Kadrosu" description="Yöneticilerimiz Türk Silahlı Kuvvetleri ve Emniyet Genel Müdürlüğü bünyesinde önemli görevlerde bulunmuştur." />
-          <div className={s.leaderGrid}>
-            {[
-              { role: 'Genel Koordinatör', bg: 'TSK Emekli Albay', exp: '28 yıl askeri deneyim, NATO operasyonları ve kriz yönetimi uzmanı.' },
-              { role: 'Güvenlik Direktörü', bg: 'Emniyet Emekli Başkomiser', exp: '24 yıl emniyet teşkilatı deneyimi, istihbarat ve terörle mücadele.' },
-              { role: 'Operasyon Müdürü', bg: 'TSK Emekli Binbaşı', exp: '22 yıl saha operasyonları, lojistik planlama ve personel yönetimi.' },
-              { role: 'Risk Analiz Direktörü', bg: 'Akademisyen / Güvenlik Uzmanı', exp: '18 yıl akademik araştırma, uluslararası güvenlik politikaları ve risk modelleme.' },
-            ].map((leader, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={s.leaderCard}>
-                <div className={s.leaderAvatar}>
-                  <User size={32} />
-                </div>
-                <h4 className={s.leaderRole}>{leader.role}</h4>
-                <span className={s.leaderBg}>{leader.bg}</span>
-                <p className={s.leaderExp}>{leader.exp}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

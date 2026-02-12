@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const quickLinks = [
     { title: 'Anasayfa', path: '/' }, { title: 'Hakkımızda', path: '/hakkimizda' },
-    { title: 'Hizmetlerimiz', path: '/hizmetlerimiz' }, { title: 'Projelerimiz', path: '/projelerimiz' },
+    { title: 'Hizmetlerimiz', path: '/hizmetlerimiz' }, { title: 'Referanslar', path: '/projelerimiz' },
   ];
   const serviceLinks = [
     { title: 'Fiziksel Güvenlik', path: '/hizmetlerimiz#fiziksel' }, { title: 'Enerji Güvenliği', path: '/hizmetlerimiz#enerji' },

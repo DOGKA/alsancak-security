@@ -122,28 +122,8 @@ export const menuData: MenuItem[] = [
     ],
   },
   {
-    title: 'Projelerimiz',
+    title: 'Referanslar',
     path: '/projelerimiz',
-    subItems: [
-      {
-        title: 'Devam Eden Projeler',
-        description: 'Aktif olarak güvenlik hizmeti verdiğimiz projeler',
-        imageAlt: 'Devam eden projeler görseli',
-        imageWidth: 80,
-        imageHeight: 52,
-        imageSrc: '/images/proje-devam-eden.png',
-        link: '/projelerimiz#devam-eden',
-      },
-      {
-        title: 'Tamamlanan Projeler',
-        description: 'Başarıyla tamamladığımız ulusal ve uluslararası projeler',
-        imageAlt: 'Tamamlanan projeler görseli',
-        imageWidth: 80,
-        imageHeight: 52,
-        imageSrc: '/images/proje-tamamlanan.png',
-        link: '/projelerimiz#tamamlanan',
-      },
-    ],
   },
   {
     title: 'Raporlama',
@@ -193,7 +173,7 @@ export const menuData: MenuItem[] = [
     subItems: [
       {
         title: 'ISO Sertifikaları',
-        description: '10 uluslararası ISO standardı ile belgelenmiş kalite',
+        description: '11 uluslararası ISO standardı ile belgelenmiş kalite',
         imageAlt: 'ISO sertifikaları görseli',
         imageWidth: 80,
         imageHeight: 52,
