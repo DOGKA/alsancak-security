@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { Shield, Zap, Building2, Camera, Users, FileSearch, ArrowRight, ChevronRight, Cpu, Radar, Lock, Globe, HeartHandshake, BarChart3, Lightbulb } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -51,6 +52,7 @@ const certificates = [
 export default function Home() {
   return (
     <>
+      <SEO title="Ankara Özel Güvenlik Şirketi — Fiziki Güvenlik Hizmetleri" description="Alsancak Grup Güvenlik, 2007'den bu yana Ankara, İstanbul ve Türkiye genelinde enerji, inşaat, madencilik sektörlerinde profesyonel özel güvenlik, fiziki güvenlik, izleme ve kontrol, profesyonel koruma hizmetleri sunan lider güvenlik firmasıdır." path="/" />
       {/* HERO */}
       <section className={s.hero}>
         <div className={s.heroBg}>

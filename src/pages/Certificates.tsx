@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import { Anchor, Calendar } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
@@ -29,6 +30,7 @@ const ispsProjects = [
 export default function Certificates() {
   return (
     <>
+      <SEO title="ISO Sertifikaları ve Kalite Standartları — 11 Uluslararası Sertifika" description="ISO 18788, ISO 45001, ISO 27001, ISO 9001 dahil 11 uluslararası ISO sertifikası ile belgelenmiş güvenlik kalitesi. ISPS Code deneyimi." path="/sertifikalar" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Kalite" title="Sertifikalar ve Kalite Standartları" description="Kapsamlı sertifika yelpazemiz, en yüksek endüstri standartlarına bağlılığımızın kanıtıdır." />

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import SectionTitle from '../components/ui/SectionTitle';
 import s from './Training.module.css';
 
@@ -53,6 +54,7 @@ export default function Training() {
 
   return (
     <>
+      <SEO title="Güvenlik Eğitim Programları — 23 Profesyonel Eğitim" description="5188 sayılı kanun, fiziki güvenlik, CCTV izleme, risk analizi, HEAT eğitimi dahil 23 kapsamlı özel güvenlik eğitim programı. Mevzuat, operasyon ve ileri düzey güvenlik eğitimleri." path="/egitim" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Eğitim" title="Eğitim Programları" description="Güvenlik personelimize verilen kapsamlı eğitim programları ile sektörün en yüksek standartlarını sağlıyoruz." />

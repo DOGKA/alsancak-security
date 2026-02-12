@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
 import s from './Projects.module.css';
@@ -45,6 +46,7 @@ export default function Projects() {
 
   return (
     <>
+      <SEO title="Referanslar — Özel Güvenlik Projeleri ve Müşterilerimiz" description="Alsancak Güvenlik'in ulusal ve uluslararası ölçekte başarıyla yürüttüğü 26+ güvenlik projesi. AB Delegasyonu, USAID, Transatlantic Petroleum, Anagold ve daha fazlası." path="/projelerimiz" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Referanslarımız" title="Referanslar" description="Ulusal ve uluslararası ölçekte güvenlik hizmeti verdiğimiz ve tamamladığımız projeler." />

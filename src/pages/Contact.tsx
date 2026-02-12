@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Globe, Send } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
@@ -27,6 +28,7 @@ export default function Contact() {
 
   return (
     <>
+      <SEO title="İletişim — Ankara Güvenlik Şirketi" description="Alsancak Grup Güvenlik ile iletişime geçin. Yıldızevler Mah. Cezayir Cd. 6/7, 06550 Ankara. Profesyonel güvenlik çözümleri hakkında bilgi alın, teklif isteyin." path="/iletisim" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="İletişim" title="Bize Ulaşın" description="Profesyonel güvenlik çözümlerimiz hakkında bilgi almak için bizimle iletişime geçin." />

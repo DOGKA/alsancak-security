@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, Target, Award, Scale } from 'lucide-react';
+import SEO from '../components/SEO';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
@@ -38,6 +39,7 @@ const coreValues = [
 export default function About() {
   return (
     <>
+      <SEO title="Hakkımızda — Ankara Güvenlik Firması" description="Alsancak Grup Güvenlik, 2007'den bu yana 7+ ülkede güvenlik hizmeti veren, TSK ve Emniyet kökenli kadrosuyla Ankara merkezli profesyonel özel güvenlik şirketidir." path="/hakkimizda" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Hakkımızda" title="Şirkete Genel Bakış" description="Alsancak Group, Türkiye'de ve ötesinde profesyonel güvenlik hizmetlerinin öncüsüdür." />

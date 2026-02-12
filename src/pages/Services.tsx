@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import { Shield, Zap, Building2, Camera, Users, AlertTriangle, BarChart3, BookOpen, Fuel, Briefcase } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
@@ -25,6 +26,7 @@ const consultingServices = [
 export default function Services() {
   return (
     <>
+      <SEO title="Güvenlik Hizmetleri — Fiziki Güvenlik, İzleme, Profesyonel Koruma" description="Fiziki güvenlik, enerji ve tesis güvenliği, izleme ve kontrol, profesyonel koruma, güvenlik danışmanlığı ve eğitim hizmetleri. Ankara, İstanbul ve Türkiye genelinde özel güvenlik çözümleri." path="/hizmetlerimiz" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Hizmetlerimiz" title="Uluslararası Güvenlik Hizmetleri" description="Fiziki güvenlik ve izleme teknolojisinin bir karışımı ile uygun maliyetli, özel, entegre güvenlik çözümleri sunuyoruz." />

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import { FileText, AlertTriangle, ArrowRight, Shield, Bell, Users, Leaf } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
@@ -36,6 +37,7 @@ const sustainabilityPoints = [
 export default function Reports() {
   return (
     <>
+      <SEO title="Risk Yönetimi ve Güvenlik Raporlama" description="Güvenlik mimarisi tasarımı, risk değerlendirme, olay yönetim süreci ve sürdürülebilirlik raporları. Uluslararası standartlarda güvenlik raporlama hizmetleri." path="/raporlama" />
       <section className={s.pageHeader}>
         <div className={s.container}>
           <SectionTitle subtitle="Raporlama" title="Raporlama ve Risk Yönetimi" description="Güvenlik mimarisi tasarımından risk değerlendirmesine kapsamlı raporlama hizmetleri." />
