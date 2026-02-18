@@ -34,7 +34,7 @@ const allRefs: Ref[] = [
   { title: 'Akkoy Enerji A.Ş.', period: '2008 (1 Yıl)', desc: 'Enerji tesisi güvenliği.', imgSrc: '/images/akkoy-enerji.png', status: 'completed', sortYear: 2008 },
   { title: 'Kolin İnşaat', period: '2008 (1 Yıl)', desc: 'İnşaat projesi güvenliği.', imgSrc: '/images/kolin.png', status: 'completed', sortYear: 2008 },
   { title: 'Yapı Merkezi İnş. ve San. A.Ş.', period: '2008 (1 Yıl)', desc: 'İnşaat ve sanayi projesi güvenliği.', imgSrc: '/images/yapi-merkezi-proje.png', status: 'completed', sortYear: 2008 },
-  { title: 'BOTAŞ/BIL Bakü-Tiflis-Ceyhan', period: '2003 — 2007', desc: 'BTC boru hattı güvenliği.', imgSrc: '/images/proje-btc.png', status: 'completed', sortYear: 2007 },
+  { title: 'BOTAŞ/BIL Bakü-Tiflis-Ceyhan', period: '2013 — 2017', desc: 'BTC boru hattı güvenliği.', imgSrc: '/images/proje-btc.png', status: 'completed', sortYear: 2017 },
 ];
 
 type Filter = 'all' | 'active' | 'completed';

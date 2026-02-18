@@ -25,7 +25,7 @@ export const menuData: MenuItem[] = [
     subItems: [
       {
         title: 'Şirket Genel Bakış',
-        description: 'Alsancak Group hakkında detaylı bilgi ve kuruluş hikayemiz',
+        description: 'Alsancak Güvenlik hakkında detaylı bilgi ve kuruluş hikayemiz',
         imageAlt: 'Şirket genel bakış görseli',
         imageWidth: 80,
         imageHeight: 52,

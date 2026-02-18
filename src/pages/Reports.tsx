@@ -13,7 +13,7 @@ const reportClients = [
 ];
 
 const riskFramework = [
-  { title: 'Türk Özel Güvenlik Hizmeti Kanunu', desc: 'Ulusal mevzuata tam uyumluluk.' },
+  { title: '5188 Sayılı Özel Güvenlik Hizmetlerine Dair Kanun', desc: 'Ulusal mevzuata tam uyumluluk.' },
   { title: 'ICoC', desc: 'Özel Güvenlik Sağlayıcıları için Uluslararası Davranış Kuralları.' },
   { title: 'SOP\'ler', desc: 'Prosedür Standartları ile operasyonel mükemmellik.' },
   { title: 'ISO 18788:2015', desc: 'Özel Güvenlik Operasyonları Yönetim Sistemi.' },

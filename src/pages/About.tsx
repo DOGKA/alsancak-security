@@ -42,7 +42,7 @@ export default function About() {
       <SEO title="Hakkımızda — Ankara Güvenlik Firması" description="Alsancak Grup Güvenlik, 2007'den bu yana 7+ ülkede güvenlik hizmeti veren, TSK ve Emniyet kökenli kadrosuyla Ankara merkezli profesyonel özel güvenlik şirketidir." path="/hakkimizda" />
       <section className={s.pageHeader}>
         <div className={s.container}>
-          <SectionTitle subtitle="Hakkımızda" title="Şirkete Genel Bakış" description="Alsancak Group, Türkiye'de ve ötesinde profesyonel güvenlik hizmetlerinin öncüsüdür." />
+          <SectionTitle subtitle="Hakkımızda" title="Şirkete Genel Bakış" description="Alsancak Güvenlik, yurtiçi ve dışında profesyonel güvenlik hizmetlerinin öncüsüdür." />
         </div>
       </section>
 
@@ -52,7 +52,7 @@ export default function About() {
             <ImageMockup width={500} height={300} alt="Alsancak Grup Güvenlik şirket binası / ekip fotoğrafı" src="/images/sirket-binasi.png" className={s.overviewImage} />
             <div className={s.overviewText}>
               <h3 className={s.overviewTitle}>2007'den Bugüne Hizmetinizdeyiz</h3>
-              <p className={s.overviewParagraph}>Alsancak Group, Türkiye'de ve ötesinde enerji, inşaat ve madencilik sektörlerine özel olarak odaklanarak hem önde gelen uluslararası hem de yerel kuruluşlara benzersiz destek sunan profesyonel güvenlik hizmetlerinin öncüsüdür.</p>
+              <p className={s.overviewParagraph}>Alsancak Güvenlik, yurtiçi ve dışında enerji, inşaat ve madencilik sektörlerine özel olarak odaklanarak hem önde gelen uluslararası hem de yerel kuruluşlara benzersiz destek sunan profesyonel güvenlik hizmetlerinin öncüsüdür.</p>
               <p className={s.overviewParagraph}>Lider kadromuz, Türk Silahlı Kuvvetleri ve Emniyet Genel Müdürlüğü'nde önemli görevlerde bulunmuş, zengin deneyim ve uzmanlığa sahip kişilerden oluşmaktadır.</p>
               <p className={s.overviewParagraph}>Bu çeşitlilik, risk analizi ve tehdit değerlendirmelerine kapsamlı bir yaklaşım getirilmesini sağlamaktadır.</p>
             </div>
