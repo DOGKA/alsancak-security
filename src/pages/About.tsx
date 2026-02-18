@@ -10,15 +10,18 @@ const orgTop = { title: 'Yönetim Kurulu', subtitle: 'Stratejik Yönetim' };
 const orgMid = { title: 'Genel Koordinatör', subtitle: 'Operasyonel Liderlik' };
 const orgDirectors = [
   { title: 'Güvenlik Direktörü', subtitle: 'Saha Operasyonları' },
-  { title: 'Operasyon Müdürü', subtitle: 'Proje Yönetimi' },
+  { title: 'Finans Direktörü', subtitle: 'Proje Yönetimi' },
+  { title: 'Hukuk Müşavirliği', subtitle: 'Sözleşme ve Hukuk ' },
 ];
 const orgDepartments = [
   'Risk Analiz ve Eğitim Departmanı',
-  'Teknik Koordinatörlük',
+  'Teknik ve IT Departmanı',
+  'Operasyon Müdürlüğü',
   'İdari Koordinatörlük',
-  'Finans ve İK Departmanı',
-  'Alarm Merkezi',
-  'İSG Uzmanları',
+  'Muhasebe ve İK Departmanı',
+  'Alarm Merkezi ve CCTV Departmanı',
+  'İSG Koordinatörlüğü',
+  'Q.R.T. (Hızlı Müdahale Ekibi)',
 ];
 
 const operationalAreas = [
