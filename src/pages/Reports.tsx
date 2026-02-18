@@ -69,8 +69,10 @@ export default function Reports() {
             {riskFramework.map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
                 className={s.frameworkCard}>
-                <div className={s.frameworkNumber}>{String(i + 1).padStart(2, '0')}</div>
-                <h5 className={s.frameworkTitle}>{item.title}</h5>
+                <div className={s.frameworkHeader}>
+                  <div className={s.frameworkNumber}>{String(i + 1).padStart(2, '0')}</div>
+                  <h5 className={s.frameworkTitle}>{item.title}</h5>
+                </div>
                 <p className={s.frameworkDesc}>{item.desc}</p>
               </motion.div>
             ))}

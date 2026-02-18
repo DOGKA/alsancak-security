@@ -43,10 +43,12 @@ export default function Services() {
                   <img src={service.imgSrc} alt={service.title} className={s.serviceImage} />
                 </div>
                 <div className={s.serviceContent}>
-                  <div className={s.serviceIconBox}>
-                    <service.icon size={18} />
+                  <div className={s.serviceHeader}>
+                    <div className={s.serviceIconBox}>
+                      <service.icon size={18} />
+                    </div>
+                    <h3 className={s.serviceTitle}>{service.title}</h3>
                   </div>
-                  <h3 className={s.serviceTitle}>{service.title}</h3>
                   <p className={s.serviceDesc}>{service.desc}</p>
                   <ul className={s.serviceList}>
                     {service.items.map((item) => (

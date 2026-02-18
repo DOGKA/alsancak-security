@@ -44,8 +44,10 @@ export default function Certificates() {
             {isoCerts.map((cert, i) => (
               <motion.div key={cert.code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}
                 className={s.isoCard}>
-                <div className={s.isoNumber}>{String(i + 1).padStart(2, '0')}</div>
-                <span className={s.isoCode}>{cert.code}</span>
+                <div className={s.isoHeader}>
+                  <div className={s.isoNumber}>{String(i + 1).padStart(2, '0')}</div>
+                  <span className={s.isoCode}>{cert.code}</span>
+                </div>
                 <h4 className={s.isoTitle}>{cert.title}</h4>
                 <p className={s.isoTitleEn}>{cert.titleEn}</p>
               </motion.div>

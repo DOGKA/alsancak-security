@@ -1,19 +1,46 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Globe, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Globe, ArrowUpRight, ChevronDown } from 'lucide-react';
 import s from './Footer.module.css';
+
+type LinkItem = { title: string; path: string };
+
+function FooterAccordion({ title, links }: { title: string; links: LinkItem[] }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className={s.accordionSection}>
+      <button className={`${s.columnTitle} ${s.accordionToggle}`} onClick={() => setOpen(v => !v)}>
+        <span>{title}</span>
+        <ChevronDown size={14} className={`${s.accordionChevron} ${open ? s.accordionChevronOpen : ''}`} />
+      </button>
+      <ul className={`${s.linkList} ${open ? s.linkListOpen : ''}`}>
+        {links.map((link) => (
+          <li key={link.title}><Link to={link.path} className={s.link}><ArrowUpRight size={12} className={s.linkArrow} />{link.title}</Link></li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const quickLinks = [
+  const quickLinks: LinkItem[] = [
     { title: 'Anasayfa', path: '/' }, { title: 'Hakkımızda', path: '/hakkimizda' },
     { title: 'Hizmetlerimiz', path: '/hizmetlerimiz' }, { title: 'Referanslar', path: '/projelerimiz' },
   ];
-  const serviceLinks = [
+  const serviceLinks: LinkItem[] = [
     { title: 'Fiziksel Güvenlik', path: '/hizmetlerimiz#fiziksel' }, { title: 'Enerji Güvenliği', path: '/hizmetlerimiz#enerji' },
     { title: 'Uzaktan İzleme', path: '/hizmetlerimiz#izleme' }, { title: 'Danışmanlık', path: '/hizmetlerimiz#danismanlik' },
   ];
-  const otherLinks = [
+  const otherLinks: LinkItem[] = [
     { title: 'Raporlama', path: '/raporlama' }, { title: 'Sertifikalar', path: '/sertifikalar' }, { title: 'Eğitim', path: '/egitim' }, { title: 'İletişim', path: '/iletisim' },
+  ];
+
+  const columns = [
+    { title: 'Hızlı Erişim', links: quickLinks },
+    { title: 'Hizmetlerimiz', links: serviceLinks },
+    { title: 'Diğer', links: otherLinks },
   ];
 
   return (
@@ -35,30 +62,9 @@ export default function Footer() {
               <div className={s.contactItem}><Globe size={14} className={s.contactItemIcon} /><span>alsancakgrup.com.tr</span></div>
             </div>
           </div>
-          <div>
-            <h4 className={s.columnTitle}>Hızlı Erişim</h4>
-            <ul className={s.linkList}>
-              {quickLinks.map((link) => (
-                <li key={link.title}><Link to={link.path} className={s.link}><ArrowUpRight size={12} className={s.linkArrow} />{link.title}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className={s.columnTitle}>Hizmetlerimiz</h4>
-            <ul className={s.linkList}>
-              {serviceLinks.map((link) => (
-                <li key={link.title}><Link to={link.path} className={s.link}><ArrowUpRight size={12} className={s.linkArrow} />{link.title}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className={s.columnTitle}>Diğer</h4>
-            <ul className={s.linkList}>
-              {otherLinks.map((link) => (
-                <li key={link.title}><Link to={link.path} className={s.link}><ArrowUpRight size={12} className={s.linkArrow} />{link.title}</Link></li>
-              ))}
-            </ul>
-          </div>
+          {columns.map((col) => (
+            <FooterAccordion key={col.title} title={col.title} links={col.links} />
+          ))}
         </div>
         <div className={s.bottomBar}>
           <p className={s.copyright}>&copy; {currentYear} Alsancak Grup Güvenlik. Tüm hakları saklıdır.</p>

@@ -70,16 +70,22 @@
   .valuesGrid { grid-template-columns: repeat(4, 1fr); }
 }
 
+.valueHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .valueIcon {
   color: var(--color-body);
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
 .valueTitle {
   color: var(--color-heading);
   font-weight: 600;
   font-size: 1.0625rem;
-  margin-bottom: 0.75rem;
 }
 
 .valueDesc {

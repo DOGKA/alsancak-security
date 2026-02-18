@@ -106,8 +106,15 @@
   transform: translateY(-3px);
 }
 
+.frameworkHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
 .frameworkNumber {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--color-bg);
@@ -115,15 +122,20 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
   line-height: 1;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .frameworkNumber {
+    font-size: 2rem;
+  }
 }
 
 .frameworkTitle {
   color: var(--color-heading);
   font-weight: 700;
   font-size: 0.9375rem;
-  margin-bottom: 0.5rem;
 }
 
 .frameworkDesc {

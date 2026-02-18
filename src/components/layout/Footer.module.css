@@ -19,13 +19,14 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 0;
   margin-bottom: 3.5rem;
 }
 
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 }
 
@@ -40,6 +41,15 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .brandSection {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .brandLink {
@@ -95,20 +105,87 @@
   flex-shrink: 0;
 }
 
-/* Link Columns */
+/* Link Columns / Accordion */
+.accordionSection {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .accordionSection {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
 .columnTitle {
   color: var(--color-heading);
   font-weight: 600;
-  margin-bottom: 1.25rem;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+.accordionToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 0;
+}
+
+@media (min-width: 768px) {
+  .accordionToggle {
+    cursor: default;
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.accordionChevron {
+  color: var(--color-muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.accordionChevronOpen {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .accordionChevron {
+    display: none;
+  }
 }
 
 .linkList {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+}
+
+.linkListOpen {
+  max-height: 20rem;
+  padding-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .linkList {
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .linkListOpen {
+    padding-bottom: 0;
+  }
 }
 
 .link {

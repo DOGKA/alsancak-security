@@ -6,7 +6,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import ImageMockup from '../components/ui/ImageMockup';
 import s from './About.module.css';
 
-const orgTop = { title: 'Danışma Kurulu', subtitle: 'Stratejik Yönetim' };
+const orgTop = { title: 'Yönetim Kurulu', subtitle: 'Stratejik Yönetim' };
 const orgMid = { title: 'Genel Koordinatör', subtitle: 'Operasyonel Liderlik' };
 const orgDirectors = [
   { title: 'Güvenlik Direktörü', subtitle: 'Saha Operasyonları' },
@@ -66,8 +66,10 @@ export default function About() {
           <div className={s.valuesGrid}>
             {coreValues.map((val, i) => (
               <GlassCard key={val.title} delay={i * 0.08}>
-                <val.icon size={26} className={s.valueIcon} />
-                <h4 className={s.valueTitle}>{val.title}</h4>
+                <div className={s.valueHeader}>
+                  <val.icon size={26} className={s.valueIcon} />
+                  <h4 className={s.valueTitle}>{val.title}</h4>
+                </div>
                 <p className={s.valueDesc}>{val.desc}</p>
               </GlassCard>
             ))}
@@ -79,7 +81,7 @@ export default function About() {
         <div className={s.container}>
           <SectionTitle subtitle="Organizasyon" title="Güvenlik Organizasyonu" description="Alsancak Grup'un güvenlik organizasyon yapısı." />
           <div className={s.orgWrapper}>
-            {/* Top — Danışma Kurulu */}
+            {/* Top —  */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
               className={s.orgTopCard}>
               <h4 className={s.orgTopTitle}>{orgTop.title}</h4>

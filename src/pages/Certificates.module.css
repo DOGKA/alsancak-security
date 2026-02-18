@@ -68,24 +68,35 @@
   opacity: 1;
 }
 
+.isoHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
 .isoNumber {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1;
-  margin-bottom: 1.25rem;
   background: linear-gradient(135deg, var(--color-heading), var(--color-muted));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .isoNumber {
+    font-size: 1.5rem;
+  }
 }
 
 .isoCode {
-  display: block;
   color: var(--color-heading);
   font-weight: 700;
   font-size: 0.9375rem;
-  margin-bottom: 0.5rem;
 }
 
 .isoTitle {
