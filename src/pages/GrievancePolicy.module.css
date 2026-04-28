@@ -1,0 +1,122 @@
+.pageHeader {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--px-lg);
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.documentCard {
+  max-width: 56rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 768px) {
+  .documentCard {
+    padding: 3rem;
+  }
+}
+
+.documentTitle {
+  color: var(--color-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.policySection {
+  margin-top: 2rem;
+}
+
+.policySection h4 {
+  color: var(--color-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.875rem;
+}
+
+.policySection p {
+  color: var(--color-body);
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  margin-top: 0.875rem;
+}
+
+.signature {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-heading);
+  font-weight: 600;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.signature p + p {
+  color: var(--color-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.policyDivider {
+  border-top: 1px solid var(--color-border);
+  margin: 3rem 0;
+}
+
+.effectiveDate {
+  color: var(--color-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.privacyIntro {
+  color: var(--color-body);
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.downloadLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  color: #fff;
+  background: var(--color-heading);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding: 0.875rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.downloadLink:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.downloadLink svg {
+  flex-shrink: 0;
+}

@@ -6,10 +6,16 @@ import GlassCard from '../components/ui/GlassCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import GradientButton from '../components/ui/GradientButton';
 import ImageMockup from '../components/ui/ImageMockup';
+import { useLanguage } from '../i18n/useLanguage';
+import { translations } from '../i18n/translations';
 import s from './Contact.module.css';
+
+const contactIcons = [MapPin, Mail, Globe];
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const { language } = useLanguage();
+  const page = translations[language].pages.contact;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,18 +26,14 @@ export default function Contact() {
     console.log(formData);
   };
 
-  const contactInfo = [
-    { icon: MapPin, title: 'Merkez Ofis', lines: ['Yıldızevler Mah. Cezayir Cd. 6/7', '06550 Ankara, Türkiye'] },
-    { icon: Mail, title: 'E-Posta', lines: ['info@alsancakguvenlik.com'] },
-    { icon: Globe, title: 'Web', lines: ['alsancakgrup.com.tr', 'alsancakguvenlik.com'] },
-  ];
+  const contactInfo = page.contactInfo.map((info, index) => ({ ...info, icon: contactIcons[index] }));
 
   return (
     <>
-      <SEO title="İletişim — Ankara Güvenlik Şirketi" description="Alsancak Grup Güvenlik ile iletişime geçin. Yıldızevler Mah. Cezayir Cd. 6/7, 06550 Ankara. Profesyonel güvenlik çözümleri hakkında bilgi alın, teklif isteyin." path="/iletisim" />
+      <SEO title={page.seo.title} description={page.seo.description} path="/iletisim" />
       <section className={s.pageHeader}>
         <div className={s.container}>
-          <SectionTitle subtitle="İletişim" title="Bize Ulaşın" description="Profesyonel güvenlik çözümlerimiz hakkında bilgi almak için bizimle iletişime geçin." />
+          <SectionTitle subtitle={page.header.subtitle} title={page.header.title} description={page.header.description} />
         </div>
       </section>
 
@@ -40,40 +42,39 @@ export default function Contact() {
           <div className={s.contactGrid}>
             {/* Form */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`glass ${s.formCard}`}>
-              <h3 className={s.formTitle}>İletişim Formu</h3>
+              <h3 className={s.formTitle}>{page.formTitle}</h3>
               <form onSubmit={handleSubmit} className={s.form}>
                 <div className={s.formRow}>
                   <div className={s.formGroup}>
-                    <label className={s.formLabel}>Ad Soyad</label>
-                    <input type="text" name="name" placeholder="Adınız Soyadınız" value={formData.name} onChange={handleChange} className={s.formInput} required />
+                    <label className={s.formLabel}>{page.labels.name}</label>
+                    <input type="text" name="name" placeholder={page.placeholders.name} value={formData.name} onChange={handleChange} className={s.formInput} required />
                   </div>
                   <div className={s.formGroup}>
-                    <label className={s.formLabel}>E-Posta</label>
-                    <input type="email" name="email" placeholder="email@ornek.com" value={formData.email} onChange={handleChange} className={s.formInput} required />
+                    <label className={s.formLabel}>{page.labels.email}</label>
+                    <input type="email" name="email" placeholder={page.placeholders.email} value={formData.email} onChange={handleChange} className={s.formInput} required />
                   </div>
                 </div>
                 <div className={s.formRow}>
                   <div className={s.formGroup}>
-                    <label className={s.formLabel}>Telefon</label>
-                    <input type="tel" name="phone" placeholder="+90 (5XX) XXX XX XX" value={formData.phone} onChange={handleChange} className={s.formInput} />
+                    <label className={s.formLabel}>{page.labels.phone}</label>
+                    <input type="tel" name="phone" placeholder={page.placeholders.phone} value={formData.phone} onChange={handleChange} className={s.formInput} />
                   </div>
                   <div className={s.formGroup}>
-                    <label className={s.formLabel}>Konu</label>
+                    <label className={s.formLabel}>{page.labels.subject}</label>
                     <select name="subject" value={formData.subject} onChange={handleChange} className={s.formInput} required>
-                      <option value="">Konu Seçin</option>
-                      <option value="guvenlik">Güvenlik Hizmeti</option>
-                      <option value="danismanlik">Danışmanlık</option>
-                      <option value="teklif">Teklif Talebi</option>
-                      <option value="diger">Diğer</option>
+                      <option value="">{page.placeholders.subject}</option>
+                      {page.options.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
                 <div className={s.formGroup}>
-                  <label className={s.formLabel}>Mesaj</label>
-                  <textarea name="message" placeholder="Mesajınızı yazın..." value={formData.message} onChange={handleChange} rows={5} className={`${s.formInput} ${s.formTextarea}`} required />
+                  <label className={s.formLabel}>{page.labels.message}</label>
+                  <textarea name="message" placeholder={page.placeholders.message} value={formData.message} onChange={handleChange} rows={5} className={`${s.formInput} ${s.formTextarea}`} required />
                 </div>
                 <GradientButton onClick={() => {}} size="lg" className={s.formSubmit}>
-                  <Send size={16} /> Gönder
+                  <Send size={16} /> {page.submit}
                 </GradientButton>
               </form>
             </motion.div>
@@ -93,7 +94,7 @@ export default function Contact() {
                   </div>
                 </GlassCard>
               ))}
-              <ImageMockup width={500} height={300} alt="Alsancak Grup Güvenlik Ofis" src="/images/office-iletisim.png" className={s.mapImage} />
+              <ImageMockup width={500} height={300} alt={page.officeAlt} src="/images/office-iletisim.png" className={s.mapImage} />
               <div className={`glass ${s.coordsBox}`}>
                 <p className={s.coordsText}>39° 56′ 0.1140″ N — 32° 51′ 35.0676″ E</p>
               </div>

@@ -2,9 +2,17 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { menuData } from '../../data/menuData';
+import { getMenuData } from '../../data/menuData';
+import type { Language } from '../../i18n/languageCore';
+import { useLanguage } from '../../i18n/useLanguage';
+import { translations } from '../../i18n/translations';
 import MegaMenu from './MegaMenu';
 import s from './Navbar.module.css';
+
+const languageOptions: { code: Language; flag: string }[] = [
+  { code: 'tr', flag: '🇹🇷' },
+  { code: 'en', flag: '🇬🇧' },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,11 +21,20 @@ export default function Navbar() {
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
+  const menuData = getMenuData(language);
+  const currentMobileLanguage = languageOptions.find((option) => option.code === language) ?? languageOptions[0];
+  const nextLanguage: Language = language === 'tr' ? 'en' : 'tr';
 
   useEffect(() => {
-    setActiveMenu(null);
-    setMobileOpen(false);
-    setMobileAccordion(null);
+    const closeMenus = window.setTimeout(() => {
+      setActiveMenu(null);
+      setMobileOpen(false);
+      setMobileAccordion(null);
+    }, 0);
+
+    return () => window.clearTimeout(closeMenus);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -44,7 +61,7 @@ export default function Navbar() {
       <div className={s.container}>
         <div className={s.inner}>
           <Link to="/" className={s.logo}>
-            <img src="/images/alsancaklogo.png" alt="Alsancak Grup Güvenlik" className={s.logoImg} />
+            <img src="/images/alsancaklogo.png" alt={t.brand.alt} className={s.logoImg} />
           </Link>
 
           <div className={s.desktopMenu}>
@@ -78,14 +95,43 @@ export default function Navbar() {
                 </div>
               );
             })}
+            <div className={s.desktopLanguageSelector} aria-label="Language selection">
+              {languageOptions.map((option) => (
+                <button
+                  key={option.code}
+                  type="button"
+                  onClick={() => setLanguage(option.code)}
+                  className={`${s.languageButton} ${language === option.code ? s.languageButtonActive : ''}`}
+                  aria-pressed={language === option.code}
+                >
+                  <span className={s.flagIcon}>{option.flag}</span>
+                  <span>{t.languageNames[option.code]}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={s.mobileToggle}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className={s.mobileActions}>
+            <div className={s.mobileLanguageSelector} aria-label="Language selection">
+              <button
+                type="button"
+                onClick={() => setLanguage(nextLanguage)}
+                className={s.mobileLanguageButton}
+                aria-label={t.languageNames[language]}
+                aria-pressed="true"
+              >
+                {currentMobileLanguage.flag}
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className={s.mobileToggle}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 

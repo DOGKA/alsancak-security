@@ -17,8 +17,6 @@ export default function MegaMenuItem({
   title,
   description,
   imageAlt,
-  imageWidth: _imageWidth,
-  imageHeight: _imageHeight,
   imageSrc,
   link,
   onClick,

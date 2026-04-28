@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Globe, ArrowUpRight, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../../i18n/useLanguage';
+import { translations } from '../../i18n/translations';
 import s from './Footer.module.css';
 
 type LinkItem = { title: string; path: string };
 
-function FooterAccordion({ title, links }: { title: string; links: LinkItem[] }) {
+function FooterAccordion({ title, links }: { title: string; links: ReadonlyArray<LinkItem> }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -25,22 +27,13 @@ function FooterAccordion({ title, links }: { title: string; links: LinkItem[] })
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const quickLinks: LinkItem[] = [
-    { title: 'Anasayfa', path: '/' }, { title: 'Hakkımızda', path: '/hakkimizda' },
-    { title: 'Hizmetlerimiz', path: '/hizmetlerimiz' }, { title: 'Referanslar', path: '/projelerimiz' },
-  ];
-  const serviceLinks: LinkItem[] = [
-    { title: 'Fiziksel Güvenlik', path: '/hizmetlerimiz#fiziksel' }, { title: 'Enerji Güvenliği', path: '/hizmetlerimiz#enerji' },
-    { title: 'Uzaktan İzleme', path: '/hizmetlerimiz#izleme' }, { title: 'Danışmanlık', path: '/hizmetlerimiz#danismanlik' },
-  ];
-  const otherLinks: LinkItem[] = [
-    { title: 'Raporlama', path: '/raporlama' }, { title: 'Sertifikalar', path: '/sertifikalar' }, { title: 'Eğitim', path: '/egitim' }, { title: 'İletişim', path: '/iletisim' },
-  ];
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const columns = [
-    { title: 'Hızlı Erişim', links: quickLinks },
-    { title: 'Hizmetlerimiz', links: serviceLinks },
-    { title: 'Diğer', links: otherLinks },
+    { title: t.footer.quickTitle, links: t.footer.quickLinks },
+    { title: t.footer.servicesTitle, links: t.footer.serviceLinks },
+    { title: t.footer.otherTitle, links: t.footer.otherLinks },
   ];
 
   return (
@@ -49,13 +42,13 @@ export default function Footer() {
         <div className={s.grid}>
           <div className={s.brandSection}>
             <Link to="/" className={s.brandLink}>
-              <img src="/images/alsancaklogo.png" alt="Alsancak Grup Güvenlik" className={s.brandLogoImg} />
+              <img src="/images/alsancaklogo.png" alt={t.brand.alt} className={s.brandLogoImg} />
               <div>
-                <span className={s.brandName}>ALSANCAK</span>
-                <span className={s.brandSub}>Grup Güvenlik</span>
+                <span className={s.brandName}>{t.brand.name}</span>
+                <span className={s.brandSub}>{t.brand.sub}</span>
               </div>
             </Link>
-            <p className={s.brandDesc}>2007'den bu yana enerji, inşaat ve madencilik sektörlerine profesyonel güvenlik hizmetleri sunan güvenilir ortağınız.</p>
+            <p className={s.brandDesc}>{t.footer.brandDesc}</p>
             <div className={s.contactInfo}>
               <div className={s.contactItem}><MapPin size={14} className={s.contactItemIcon} /><span>Yıldızevler Mah. Cezayir Cd. 6/7, 06550 Ankara</span></div>
               <div className={s.contactItem}><Mail size={14} className={s.contactItemIcon} /><span>info@alsancakguvenlik.com</span></div>
@@ -67,7 +60,7 @@ export default function Footer() {
           ))}
         </div>
         <div className={s.bottomBar}>
-          <p className={s.copyright}>&copy; {currentYear} Alsancak Grup Güvenlik. Tüm hakları saklıdır.</p>
+          <p className={s.copyright}>&copy; {currentYear} {t.brand.titleSuffix}. {t.footer.copyright}</p>
           <p className={s.coords}>39° 56′ 0.1140″ N — 32° 51′ 35.0676″ E</p>
         </div>
       </div>

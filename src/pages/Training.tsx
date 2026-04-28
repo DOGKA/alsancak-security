@@ -1,71 +1,30 @@
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/ui/SectionTitle';
+import { useLanguage } from '../i18n/useLanguage';
+import { translations } from '../i18n/translations';
 import s from './Training.module.css';
 
-const categories = [
-  {
-    id: 'mevzuat',
-    title: 'Mevzuat ve Hukuk',
-    items: [
-      '5188 Sayılı Özel Güvenlik Hizmetlerine Dair Kanun',
-      'Özel Güvenlik Yetki ve Sorumlulukları',
-      'İnsan Hakları Gönüllülük İlkeleri',
-      'KVKK ve Veri Gizliliği',
-      'Meslek Etiği ve Profesyonel Davranış',
-    ],
-  },
-  {
-    id: 'operasyon',
-    title: 'Fiziksel Güvenlik Operasyonları',
-    items: [
-      'Fiziki Güvenlik Prensipleri',
-      'Tesis ve Yerleşke Güvenliği',
-      'Kritik Altyapı Güvenliği',
-      'Erişim Kontrol Sistemleri',
-      'Kartlı Geçiş Sistemleri',
-      'CCTV İzleme Teknikleri',
-      'Alarm Sistemleri Yönetimi',
-      'Devriye Planlama ve Uygulama',
-      'Kontrol Noktası (Checkpoint) Yönetimi',
-      'Araç ve Kargo Kontrolleri',
-      'Ziyaretçi Yönetimi',
-      'Anahtar ve Kilit Sistemleri Yönetimi',
-    ],
-  },
-  {
-    id: 'analiz',
-    title: 'İleri Düzey ve Analiz',
-    items: [
-      'Perimetre Güvenliği',
-      'Aydınlatma ve Fiziksel Caydırıcılık',
-      'Risk Analizi ve Tehdit Değerlendirmesi',
-      'Güvenlik Denetimleri (Audit)',
-      'Olay Raporlama Teknikleri',
-      'Delil Koruma Farkındalığı',
-    ],
-  },
-];
-
-let globalIndex = 0;
-
 export default function Training() {
-  globalIndex = 0;
+  const { language } = useLanguage();
+  const page = translations[language].pages.training;
+  const common = translations[language].common;
 
   return (
     <>
-      <SEO title="Güvenlik Eğitim Programları — 23 Profesyonel Eğitim" description="5188 sayılı kanun, fiziki güvenlik, CCTV izleme, risk analizi, HEAT eğitimi dahil 23 kapsamlı özel güvenlik eğitim programı. Mevzuat, operasyon ve ileri düzey güvenlik eğitimleri." path="/egitim" />
+      <SEO title={page.seo.title} description={page.seo.description} path="/egitim" />
       <section className={s.pageHeader}>
         <div className={s.container}>
-          <SectionTitle subtitle="Eğitim" title="Eğitim Programları" description="Güvenlik personelimize verilen kapsamlı eğitim programları ile sektörün en yüksek standartlarını sağlıyoruz." />
+          <SectionTitle subtitle={page.header.subtitle} title={page.header.title} description={page.header.description} />
         </div>
       </section>
 
       <section className={`${s.section} section-alt section-divider`}>
         <div className={s.container}>
-          {categories.map((cat, catIdx) => {
-            const startIndex = globalIndex;
-            globalIndex += cat.items.length;
+          {page.categories.map((cat, catIdx) => {
+            const startIndex = page.categories
+              .slice(0, catIdx)
+              .reduce((total, category) => total + category.items.length, 0);
             return (
               <div key={cat.id} id={cat.id} className={s.category}>
                 <div className={s.categoryRow}>
@@ -79,7 +38,7 @@ export default function Training() {
                     >
                       {cat.title}
                     </motion.h3>
-                    <span className={s.categoryCount}>{cat.items.length} Eğitim</span>
+                    <span className={s.categoryCount}>{cat.items.length} {common.trainingCount}</span>
                   </div>
                   <div className={s.categoryItems}>
                     {cat.items.map((item, i) => {
@@ -100,7 +59,7 @@ export default function Training() {
                     })}
                   </div>
                 </div>
-                {catIdx < categories.length - 1 && <div className={s.divider} />}
+                {catIdx < page.categories.length - 1 && <div className={s.divider} />}
               </div>
             );
           })}

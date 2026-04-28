@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
+import { useLanguage } from '../../i18n/useLanguage';
+import { translations } from '../../i18n/translations';
 import s from './Globe3D.module.css';
 
 const markers = [
@@ -15,6 +17,8 @@ const markers = [
 
 export default function Globe3D() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { language } = useLanguage();
+  const labels = translations[language].globe;
 
   useEffect(() => {
     let phi = 0.3;
@@ -63,8 +67,8 @@ export default function Globe3D() {
         className={s.canvas}
       />
       <div className={s.labels}>
-        {markers.map((m) => (
-          <span key={m.name} className={s.label}>{m.name}</span>
+        {markers.map((m, index) => (
+          <span key={m.name} className={s.label}>{labels[index]}</span>
         ))}
       </div>
     </div>
